@@ -17,8 +17,9 @@
         <button type="submit">Log In</button>
     </form>
 
-    <form action="DataBase_Connect.php" method="GET">
+    <form action="SignUpDataBase.php" method="GET">
         <h2>SignUp</h2>
+        <label for="ProfilePicture">Profile</label><input type="file" name="ProfilePicture" id="" accept="image/*"><br><br>
         <label for="username">User Name</label> <input type="text" name="username" placeholder="User Name" required="true"> <br><br>
         <label for="email">Email</label> <input type="email" name="email" placeholder="User Name"> <br><br>
         <label for="password">Password</label> <input type="password" name="password" placeholder="User Name"> <br><br>
