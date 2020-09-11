@@ -1,8 +1,5 @@
 <?php
     include "db.php";
-    // echo $uname;
-    // echo $uemail;
-    // echo $upassword;
     try {
         $stmt = $conn->prepare("INSERT INTO USER (username, EMAIL, PASSWORD, ROLE)
         VALUES (:uname, :uemail, :upassword, :role)");
