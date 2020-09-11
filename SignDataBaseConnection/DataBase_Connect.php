@@ -1,13 +1,14 @@
 <?php
     include "db.php";
     try {
-        $stmt = $conn->prepare("INSERT INTO USER (username, EMAIL, PASSWORD, ROLE)
-        VALUES (:uname, :uemail, :upassword, :role)");
+        $stmt = $conn->prepare("INSERT INTO USER (username, email, password, role, profilefile )
+        VALUES (:uname, :uemail, :upassword, :role, :profilefile )");
 
         $stmt->bindParam(':uname', $uname);
         $stmt->bindParam(':uemail', $uemail);
         $stmt->bindParam(':upassword', $upassword);
         $stmt->bindParam(':role', $role);
+        $stmt->bindParam(':profilefile ', $profilefile);
 
         $uname = $_GET['username'];
         $uemail = $_GET['email'];
