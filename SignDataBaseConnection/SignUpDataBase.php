@@ -10,6 +10,8 @@
         $fileError = $_FILES['ProfilePicture']['error'];
         $fileType = $_FILES['ProfilePicture']['type'];
 
+        $fileActualExt = strtolower(end(explode(".", $fileName)));
+
     }
 
 ?>
