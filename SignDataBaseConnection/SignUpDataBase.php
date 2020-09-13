@@ -11,6 +11,19 @@
         $fileType = $_FILES['ProfilePicture']['type'];
 
         $fileActualExt = strtolower(end(explode(".", $fileName)));
+        $allow = array('jpg', 'jpeg', 'png');
+
+        if( in_array( $fileActualExt, $allow ) ) {
+            if ($fileError == 0 ) {
+                if ( $file < 10097152) {
+                    $fileNewName = uniqid('', true).".".$fileActualExt;
+                    $fileDestination = "uploads/".$fileNewName;
+
+                    move_uploaded_file($fileTmpName, $fileDestination);
+                }
+            }
+
+        }
 
     }
 
