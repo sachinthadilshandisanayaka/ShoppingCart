@@ -20,6 +20,7 @@
                     $fileDestination = "uploads/".$fileNewName;
 
                     move_uploaded_file($fileTmpName, $fileDestination);
+                    
                 }
             }
 
