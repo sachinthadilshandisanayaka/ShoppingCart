@@ -13,29 +13,26 @@
             }
         }
     ?>
-    <form action="Logging.php" class="navigate-logging">
+    <!-- <form action="Logging.php" class="navigate-logging" method="POST">
         <button type="submit">Log In</button>
-    </form>
+    </form> -->
+        <h2>Sign Up</h2>
+    <form action="SignDataBaseConnection/SignUpDataBase.inc.php" method="POST" enctype="multipart/form-data">
 
-    <form action="SignDataBaseConnection/SignUpDataBase.php" method="GET">
-        <h2>SignUp</h2>
-        <label for="Picture">Profile</label><input type="file" name="ProfilePicture" id="ProfilePicture" accept="image/*"><br><br>
+        <label for="Picture">Profile</label><input type="file" name="file" id="ProfilePicture" accept="image/*"><br><br>
         <label for="username">User Name</label> <input type="text" name="username" placeholder="User Name" required="true"> <br><br>
         <label for="email">Email</label> <input type="email" name="email" placeholder="User Name"> <br><br>
-        <label for="password">Password</label> <input type="password" name="password" placeholder="User Name"> <br><br>
-        
-        <div class="role-select">
+        <label for="password">Password</label> <input type="password" name="password" placeholder="password"> <br><br>
+
             <input type="radio" name="role" id="" value="Adminiter" required="true">
             <label for="Administer">Administer</label><br><br>
             <input type="radio" name="role" id="" value="Customer" required="true">
             <label for="Customer">Customer</label><br><br>
             <input type="radio" name="role" id="" value="saller" required="true">
             <label for="Saller">Saller</label><br><br>
-        </div>
-
-        <label for=""></label>
+      
         <input type="submit" value="submit">
     </form>
-   
+ 
 </body>
 </html>
