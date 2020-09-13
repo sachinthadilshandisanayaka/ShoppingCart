@@ -1,7 +1,7 @@
 <?php
-    // require 'db.php';
+    
     echo "Sign up database file <br>";
-    $uname = $_POST['username'];
+    
             $file = $_FILES['file'];
             $fileName = $_FILES['file']['name'];
             $fileTmpName = $_FILES['file']['tmp_name'];
@@ -13,8 +13,7 @@
             $allow = array('jpg', 'jpeg', 'png');
 
            
-            if( in_array( $fileActualExt, $allow ) ) {
-                
+        if( in_array( $fileActualExt, $allow ) ) {
                 
                 if ($fileError == 0 ) {
                    
@@ -25,9 +24,43 @@
                             $fileDestination = "uploads/".$fileNewName;
                             move_uploaded_file($fileTmpName, $fileDestination);
                             echo 'Upload is Success';
+                            dataBaseCall($fileNewName);
                     }
                 }
 
             }
+            function dataBaseCall($profileFilePath) {
+                try {
+                    require 'db.inc.php';
+                    $stmt = $conn->prepare("INSERT INTO userdb (username,email,password,role, profilefile) 
+                    VALUES (:uname, :uemail, :upassword, :act, :pfile)");
+            
+                    $stmt->bindParam(':uname', $uname, PDO::PARAM_STR);
+                    $stmt->bindParam(':uemail', $uemail, PDO::PARAM_STR);
+                    $stmt->bindParam(':upassword', $upassword, PDO::PARAM_STR);
+                    $stmt->bindParam(':act', $role, PDO::PARAM_INT);
+                    $stmt->bindParam(':pfile', $profile, PDO::PARAM_STR);
+            
+                    $uname = $_POST['username'];
+                    $uemail = $_POST['email'];
+                    $upassword = md5($_POST['password']);
+                    $role = 1;
+                    $profile = $profileFilePath;  
+                    $stmt->execute();
+            
+                    if ( $stmt->rowCount() == 1) {
+                        echo "OK";
+                    } else {
+                        echo 'ERROR';
+                        header("location: SignUp.inc.php?er=1?er=1");  
+                    }
+                    $conn = null;
+                } catch(PDOException $e){
+                    header("location: SignUp.inc.php?er=1?er=1"); 
+            }
+        }
+              
+           
+               
 
 ?>
