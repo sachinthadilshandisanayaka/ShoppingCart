@@ -34,29 +34,39 @@
                     require 'db.inc.php';
                     $stmt = $conn->prepare("INSERT INTO userdb (username,email,password,role, profilefile) 
                     VALUES (:uname, :uemail, :upassword, :act, :pfile)");
-            
-                    $stmt->bindParam(':uname', $uname, PDO::PARAM_STR);
-                    $stmt->bindParam(':uemail', $uemail, PDO::PARAM_STR);
-                    $stmt->bindParam(':upassword', $upassword, PDO::PARAM_STR);
-                    $stmt->bindParam(':act', $role, PDO::PARAM_INT);
-                    $stmt->bindParam(':pfile', $profile, PDO::PARAM_STR);
-            
-                    $uname = $_POST['username'];
-                    $uemail = $_POST['email'];
-                    $upassword = md5($_POST['password']);
+
+                    $uname = trim($_POST['username']);
+                    $uemail = trim($_POST['email']);
+                    $upassword =trim(md5($_POST['password']));
                     $role = 1;
-                    $profile = $profileFilePath;  
-                    $stmt->execute();
-            
-                    if ( $stmt->rowCount() == 1) {
-                        echo "OK";
+                    $profile = $profileFilePath;
+
+                    $sql="SELECT * FROM userdb WHERE email=:un ";
+                    $statment=$conn->prepare($sql);
+                    $statment->bindParam(':un',$uemail);
+                    $statment->execute();
+
+                    if ( $statment->rowCount() == 0) {
+                        $stmt->bindParam(':uname', $uname, PDO::PARAM_STR);
+                        $stmt->bindParam(':uemail', $uemail, PDO::PARAM_STR);
+                        $stmt->bindParam(':upassword', $upassword, PDO::PARAM_STR);
+                        $stmt->bindParam(':act', $role, PDO::PARAM_INT);
+                        $stmt->bindParam(':pfile', $profile, PDO::PARAM_STR);
+                        $stmt->execute();
+
+                        if ( $stmt->rowCount() == 1) {
+                            echo "OK";
+                        } else {
+                            echo 'ERROR';
+                            header("location: ../SignUp.inc.php?er=1?er=1");  
+                        }
                     } else {
-                        echo 'ERROR';
-                        header("location: SignUp.inc.php?er=1?er=1");  
+                        header("location: ../SignUp.inc.php?er2=1");
                     }
+            
                     $conn = null;
                 } catch(PDOException $e){
-                    header("location: SignUp.inc.php?er=1?er=1"); 
+                    header("location: ../SignUp.inc.php?er=1?er=1"); 
             }
         }
               
