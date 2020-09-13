@@ -1,5 +1,5 @@
 <?php
-    require 'db.php';
+    // require 'db.php';
 
     if(isset($_GET['submit'])){
 
@@ -20,7 +20,7 @@
                     $fileDestination = "uploads/".$fileNewName;
 
                     move_uploaded_file($fileTmpName, $fileDestination);
-                    
+                    echo($fileDestination);
                 }
             }
 
