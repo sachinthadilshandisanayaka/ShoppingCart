@@ -1,9 +1,10 @@
 <?php
     // require 'db.php';
 
-    if(isset($_GET['submit'])){
-
+    if ( isset( $_GET['submit']) ) {
+        echo "hello";
         $file = $_FILES['ProfilePicture'];
+        echo($file);
         $fileName = $_FILES['ProfilePicture']['name'];
         $fileTmpName = $_FILES['ProfilePicture']['tmp_name'];
         $fileSize = $_FILES['ProfilePicture']['size'];
@@ -20,7 +21,7 @@
                     $fileDestination = "uploads/".$fileNewName;
 
                     move_uploaded_file($fileTmpName, $fileDestination);
-                    echo($fileDestination);
+                    echo  "$fileDestination";
                 }
             }
 
