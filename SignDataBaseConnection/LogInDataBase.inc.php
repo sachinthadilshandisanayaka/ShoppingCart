@@ -4,7 +4,7 @@
     $email = trim($_POST("email"));
 
      try {
-        $sql = "SELECT * FROM userdb email=:em AND password=:pw";
+        $sql = "SELECT * FROM userdb WHERE email=:em AND password=:pw";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':um',$email);
         $stmt->bindParam(':pw',$userPassword);
@@ -13,11 +13,11 @@
         if ($stmt->rowCount() == 1) {
             echo "LogIn Successfully";
         } else {
-            header("location: ../Logging.inc.php?er2=1");
+            header("Location: ../Logging.inc.php?er2=1");
         }
        
     } catch(PDOException $e) {
-        header("location: ../Logging.inc.php?er=1");
+        header("Location: ../Logging.inc.php?er=1");
     }
   $conn = null;
 
