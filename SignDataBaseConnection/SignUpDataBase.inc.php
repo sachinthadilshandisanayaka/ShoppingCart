@@ -58,7 +58,7 @@
                             echo "OK";
                         } else {
                             echo 'ERROR';
-                            header("location: ../SignUp.inc.php?er=1?er=1");  
+                            header("location: ../SignUp.inc.php?er=1?er2=1");  
                         }
                     } else {
                         header("location: ../SignUp.inc.php?er2=1");

@@ -9,9 +9,15 @@
         $stmt->bindParam(':um',$email);
         $stmt->bindParam(':pw',$userPassword);
         $stmt->execute();
+
+        if ($stmt->rowCount() == 1) {
+            echo "LogIn Successfully";
+        } else {
+            header("location: ../Logging.inc.php?er2=1");
+        }
        
     } catch(PDOException $e) {
-        header("location:DataBase_Connect.php?er=1");
+        header("location: ../Logging.inc.php?er=1");
     }
   $conn = null;
 
