@@ -13,7 +13,7 @@
             }
         }
     ?>
-    <form action="Logging.php" class="navigate-logging" method="POST">
+    <form action="Logging.inc.php" class="navigate-logging" method="POST">
         <button type="submit">Log In</button>
     </form>
         <h2>Sign Up</h2>

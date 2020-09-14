@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-<form action="SignUp.php" class="navigate-logging">
+<form action="SignUp.inc.php" class="navigate-logging">
         <button type="submit">Sign up</button>
     </form>
     <?php
