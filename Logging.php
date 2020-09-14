@@ -9,10 +9,10 @@
 <form action="SignUp.php" class="navigate-logging">
         <button type="submit">Sign up</button>
     </form>
-    <form action="SignDataBaseConnection/LogInDataBase.inc.php" method="GET">
+    <form action="SignDataBaseConnection/LogInDataBase.inc.php" method="POST">
         <h2>Logging</h2>
-        <label for="email">Email</label> <input type="email" name="email" placeholder="User Name"> <br><br>
-        <label for="password">Password</label> <input type="password" name="password" placeholder="User Name"> <br><br>
+        <label for="email">Email</label> <input type="email" name="email" placeholder="Email"> <br><br>
+        <label for="password">Password</label> <input type="password" name="password" placeholder="Password"> <br><br>
         <input type="submit" value="submit">
     </form>
 
