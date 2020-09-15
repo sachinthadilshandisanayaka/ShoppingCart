@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/LogIn.css">
     <title>Document</title>
 </head>
 <body>
@@ -17,9 +18,9 @@
         }
     ?>
 
-    <form action="SignDataBaseConnection/LogInDataBase.inc.php" method="POST">
+    <form action="SignDataBaseConnection/LogInDataBase.inc.php" method="POST" class="form-1">
         <h2>Logging</h2>
-        <label for="email">Email</label> <input type="email" name="email" placeholder="Email"> <br><br>
+        <label for="email">Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> <input type="email" name="email" placeholder="Email"> <br><br>
         <label for="password">Password</label> <input type="password" name="password" placeholder="Password"> <br><br>
         <?php
         if(isset($_REQUEST['er2'])){
@@ -28,7 +29,7 @@
             }
         }
     ?>
-        <input type="submit" value="submit">
+        <button type="submit" value="submit" class="button1">submit</button>
     </form>
 
 </body>
