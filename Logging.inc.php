@@ -29,7 +29,7 @@
             }
         }
     ?>
-        <button type="submit" value="submit" class="button1">submit</button>
+        <button type="submit" value="submit" class="button1">Log In</button>
     </form>
 
 </body>
