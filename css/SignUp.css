@@ -1,8 +1,14 @@
+html{
+    scroll-behavior: smooth;
+}
 body{
     margin: 0;
+    background-image: url("../images/login.jpg");
+    background-attachment: fixed;
+    background-color: #29B6F6;
+   
 }
 .navigate-logging{
-    background-color: #D6DBDF;
     padding: 10px 5px 10px 5px;
 }
 .navigate-logging button{

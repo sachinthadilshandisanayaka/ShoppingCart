@@ -1,5 +1,11 @@
+html{
+    scroll-behavior: smooth;
+}
 body{
     margin: 0;
+    background-image: url("../images/login.jpg");
+    background-attachment: fixed;
+    
 }
 .navigate-logging{
     background-color: #D6DBDF;
