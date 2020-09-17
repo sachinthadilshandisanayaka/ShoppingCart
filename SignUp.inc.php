@@ -38,7 +38,7 @@
         <label for="password">Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
         </label> <input type="password" name="password" placeholder="password"> <br><br>
-        <label for="password">Conform Password</label> <input type="password" name="password" placeholder="conform password"> <br><br>
+        <label for="password">Conform Password</label> <input type="password" name="conformPassword" placeholder="conform password"> <br><br>
 
         <input type="radio" name="role" id="" value="Adminiter" required="true">
         <label for="Administer">Administer</label><br><br>
