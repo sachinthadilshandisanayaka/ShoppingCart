@@ -20,9 +20,14 @@
         
     <form action="SignDataBaseConnection/SignUpDataBase.inc.php" method="POST" enctype="multipart/form-data" class="form-1">
     <h2>Sign Up</h2>
-        <label for="Picture">Profile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="file" name="file" id="ProfilePicture" accept="image/*"><br><br>
-        <label for="username">User Name</label> <input type="text" name="username" placeholder="User Name" required="true"> <br><br>
-        <label for="email">Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> <input type="email" name="email" placeholder="User Name"> <br><br>
+        <label for="Picture">Profile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="file" name="file" id="ProfilePicture" accept="image/*"><br><br>
+        <label for="username">User Name
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </label> <input type="text" name="username" placeholder="user Name" required="true"> <br><br>
+        <label for="email">Email&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </label> <input type="email" name="email" placeholder="email"> <br><br>
         <?php
         if ( isset($_REQUEST['er2']) ) {
             if ($_REQUEST['er2'] == 1 ) {
@@ -30,7 +35,10 @@
             }
         }
         ?>
-        <label for="password">Password&nbsp;&nbsp;</label> <input type="password" name="password" placeholder="password"> <br><br>
+        <label for="password">Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        </label> <input type="password" name="password" placeholder="password"> <br><br>
+        <label for="password">Conform Password</label> <input type="password" name="password" placeholder="conform password"> <br><br>
 
         <input type="radio" name="role" id="" value="Adminiter" required="true">
         <label for="Administer">Administer</label><br><br>
