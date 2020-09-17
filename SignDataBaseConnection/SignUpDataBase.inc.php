@@ -12,20 +12,27 @@
             $fileActualExt = strtolower(end($fileExt));
             $allow = array('jpg', 'jpeg', 'png');
 
-           
-        if( in_array( $fileActualExt, $allow ) ) {
+            $sql="SELECT * FROM userdb WHERE email=:un ";
+            $statment=$conn->prepare($sql);
+            $statment->bindParam(':un',$uemail);
+            $statment->execute();
+
+            if ( $statment->rowCount() == 0) {
+                if( in_array( $fileActualExt, $allow ) ) {
                 
-                if ($fileError == 0 ) {
-                   
-                    if ( $fileSize < 10097152) {
-                    
-                        $fileNewName = uniqid('', true).".".$fileActualExt;
+                    if ($fileError == 0 ) {
                        
-                            $fileDestination = "uploads/".$fileNewName;
-                            move_uploaded_file($fileTmpName, $fileDestination);
-                            echo 'Upload is Success';
-                            dataBaseCall($fileNewName);
+                        if ( $fileSize < 10097152) {
+                        
+                            $fileNewName = uniqid('', true).".".$fileActualExt;
+                           
+                                $fileDestination = "uploads/".$fileNewName;
+                                move_uploaded_file($fileTmpName, $fileDestination);
+                                echo 'Upload is Success';
+                                dataBaseCall($fileNewName);
+                        }
                     }
+    
                 }
 
             }
@@ -40,12 +47,7 @@
                     $upassword =trim(md5($_POST['password']));
                     $role = 1;
                     $profile = $profileFilePath;
-
-                    $sql="SELECT * FROM userdb WHERE email=:un ";
-                    $statment=$conn->prepare($sql);
-                    $statment->bindParam(':un',$uemail);
-                    $statment->execute();
-
+                    
                     if ( $statment->rowCount() == 0) {
                         $stmt->bindParam(':uname', $uname, PDO::PARAM_STR);
                         $stmt->bindParam(':uemail', $uemail, PDO::PARAM_STR);
