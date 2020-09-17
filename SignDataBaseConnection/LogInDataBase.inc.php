@@ -11,7 +11,7 @@
         $stmt->execute();
 
         if ($stmt->rowCount() == 1) {
-            echo "LogIn Successfully";
+            header("Location: ../AdminPanel/AdminPanel.inc.php");
         } else {
             header("location: ../Logging.inc.php?er2=1");
         }
