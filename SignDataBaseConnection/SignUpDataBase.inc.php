@@ -39,7 +39,7 @@
 
             }
         } else {
-            header("location: ../SignUp.inc.php?er=1?er2=1");  
+            header("location: ../SignUp.inc.php?er2=1");  
         }
    
         function dataBaseCall($profileFilePath) {
@@ -69,7 +69,7 @@
                     if ( $stmt->rowCount() == 1) {
                         header("location: ../Logging.inc.php");
                     } else {
-                        header("location: ../SignUp.inc.php?er=1?er2=1");  
+                        header("location: ../SignUp.inc.php?er=1");  
                     }
                 } else {
                     header("location: ../SignUp.inc.php?er2=1");
@@ -77,7 +77,7 @@
         
                 $conn = null;
             } catch(PDOException $e){
-                header("location: ../SignUp.inc.php?er=1?er=1"); 
+                header("location: ../SignUp.inc.php?er=1?"); 
         }
     }
        
