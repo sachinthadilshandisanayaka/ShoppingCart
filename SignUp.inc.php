@@ -39,7 +39,15 @@
 
         </label> <input type="password" name="password" placeholder="password"> <br><br>
         <label for="password">Conform Password</label> <input type="password" name="conformPassword" placeholder="conform password"> <br><br>
-
+       
+       <?php
+        if ( isset($_REQUEST['er']) ) {
+            if ($_REQUEST['er'] == 3 ) {
+                echo "<b>Conform password is incorrect !</b><br><br>";
+            }
+        }
+        ?>
+        
         <input type="radio" name="role" id="" value="Adminiter" required="true">
         <label for="Administer">Administer</label><br><br>
         <input type="radio" name="role" id="" value="Customer" required="true">

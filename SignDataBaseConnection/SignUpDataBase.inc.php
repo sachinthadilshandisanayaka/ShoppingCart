@@ -3,7 +3,9 @@
     echo "Sign up database file <br>";
     $uemail = trim($_POST['email']);
     $cEmail = trim($_POST['conformPassword']);
+
     if ($uemail == $cEmail ) {
+        
         $file = $_FILES['file'];
         $fileName = $_FILES['file']['name'];
         $fileTmpName = $_FILES['file']['tmp_name'];
@@ -82,7 +84,7 @@
     }
        
     } else {
-        header("location: ../SignUp.inc.php?er=1?er=1");
+        header("location: ../SignUp.inc.php?er=3?");
     }        
 
 ?>
