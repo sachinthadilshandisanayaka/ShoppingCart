@@ -5,11 +5,12 @@ body{
     margin: 0;
     background-image: url("../images/login.jpg");
     background-attachment: fixed;
-    background-color: #29B6F6;
    
 }
 .navigate-logging{
     padding: 10px 5px 10px 5px;
+    background-color: #5D6D7E;
+    box-shadow: 1px 2px 5px black;
 }
 .navigate-logging button{
     background-color: #29B6F6;
