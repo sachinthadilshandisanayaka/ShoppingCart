@@ -1,11 +1,11 @@
 <?php
     
     echo "Sign up database file <br>";
-    $uemail = trim($_POST['email']);
-    $cEmail = trim($_POST['conformPassword']);
+    $upassword =trim($_POST['password']);
+    $cPassword = trim($_POST['conformPassword']);
 
-    if ($uemail == $cEmail ) {
-        
+    if (strcmp($upassword,$cPassword) == 0 ) {
+
         $file = $_FILES['file'];
         $fileName = $_FILES['file']['name'];
         $fileTmpName = $_FILES['file']['tmp_name'];
@@ -51,7 +51,7 @@
                 VALUES (:uname, :uemail, :upassword, :act, :pfile)");
 
                 $uname = trim($_POST['username']);
-                $upassword =trim(md5($_POST['password']));
+                $uemail = trim($_POST['email']);
                 $role = 1;
                 $profile = $profileFilePath;
 
@@ -84,7 +84,7 @@
     }
        
     } else {
-        header("location: ../SignUp.inc.php?er=3?");
+        header("location: ../SignUp.inc.php?er3=3?");
     }        
 
 ?>

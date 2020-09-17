@@ -41,8 +41,8 @@
         <label for="password">Conform Password</label> <input type="password" name="conformPassword" placeholder="conform password"> <br><br>
        
        <?php
-        if ( isset($_REQUEST['er']) ) {
-            if ($_REQUEST['er'] == 3 ) {
+        if ( isset($_REQUEST['er3']) ) {
+            if ($_REQUEST['er3'] == 3 ) {
                 echo "<b>Conform password is incorrect !</b><br><br>";
             }
         }
