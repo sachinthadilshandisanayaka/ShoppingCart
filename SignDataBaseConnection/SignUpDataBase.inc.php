@@ -66,7 +66,7 @@
                         $stmt->execute();
 
                         if ( $stmt->rowCount() == 1) {
-                            echo "OK";
+                            header("location: ../Logging.inc.php");
                         } else {
                             header("location: ../SignUp.inc.php?er=1?er2=1");  
                         }
