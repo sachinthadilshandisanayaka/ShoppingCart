@@ -3,13 +3,15 @@ html{
 }
 body{
     margin: 0;
-    background-image: url("../images/login.jpg");
+    background-image: url("../images/login3.jpg");
     background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
    
 }
 .navigate-logging{
     padding: 10px 5px 10px 5px;
-    background-color: #5D6D7E;
+    background-color: #85929E;
     box-shadow: 1px 2px 5px black;
 }
 .navigate-logging button{
@@ -44,7 +46,7 @@ body{
     background-color: #CCD1D1 ;
 }
 .button1{
-    background-color: #2ECC71;
+    background-color: #58D68D;
     border-radius: 10px;
     font-family: Verdana;
     width: 250px;
