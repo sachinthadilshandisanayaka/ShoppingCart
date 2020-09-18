@@ -35,7 +35,43 @@
                             $fileDestination = "uploads/".$fileNewName;
                             move_uploaded_file($fileTmpName, $fileDestination);
                             echo 'Upload is Success';
-                            dataBaseCall($fileNewName);
+                            // dataBaseCall($fileNewName);
+                            try {
+                                require 'db.inc.php';
+                                $stmt = $conn->prepare("INSERT INTO userdb (username,email,password,role, profilefile) 
+                                VALUES (:uname, :uemail, :upassword, :act, :pfile)");
+                
+                                $uname = trim($_POST['username']);
+                                $uemail = trim($_POST['email']);
+                                $role = 1;
+                                $profile = $fileNewName;
+                
+                                $sql="SELECT * FROM userdb WHERE email=:un ";
+                                $statment=$conn->prepare($sql);
+                                $statment->bindParam(':un',$uemail);
+                                $statment->execute();
+                
+                                if ( $statment->rowCount() == 0) {
+                                    $stmt->bindParam(':uname', $uname, PDO::PARAM_STR);
+                                    $stmt->bindParam(':uemail', $uemail, PDO::PARAM_STR);
+                                    $stmt->bindParam(':upassword', $upassword, PDO::PARAM_STR);
+                                    $stmt->bindParam(':act', $role, PDO::PARAM_INT);
+                                    $stmt->bindParam(':pfile', $profile, PDO::PARAM_STR);
+                                    $stmt->execute();
+                
+                                    if ( $stmt->rowCount() == 1) {
+                                        header("location: ../Logging.inc.php?er=2");
+                                    } else {
+                                        header("location: ../SignUp.inc.php?er=1");  
+                                    }
+                                } else {
+                                    header("location: ../SignUp.inc.php?er2=1");
+                                }
+                        
+                                $conn = null;
+                            } catch(PDOException $e){
+                                header("location: ../SignUp.inc.php?er=1?"); 
+                        }
                     }
                 }
 
@@ -44,47 +80,48 @@
             header("location: ../SignUp.inc.php?er2=1");  
         }
    
-        function dataBaseCall($profileFilePath) {
-            try {
-                require 'db.inc.php';
-                $stmt = $conn->prepare("INSERT INTO userdb (username,email,password,role, profilefile) 
-                VALUES (:uname, :uemail, :upassword, :act, :pfile)");
+    //     function dataBaseCall($fileNewName) {
+    //         try {
+    //             require 'db.inc.php';
+    //             $stmt = $conn->prepare("INSERT INTO userdb (username,email,password,role, profilefile) 
+    //             VALUES (:uname, :uemail, :upassword, :act, :pfile)");
 
-                $uname = trim($_POST['username']);
-                $uemail = trim($_POST['email']);
-                $role = 1;
-                $profile = $profileFilePath;
+    //             $uname = trim($_POST['username']);
+    //             $uemail = trim($_POST['email']);
+    //             $role = 1;
+    //             $profile = $fileNewName;
 
-                $sql="SELECT * FROM userdb WHERE email=:un ";
-                $statment=$conn->prepare($sql);
-                $statment->bindParam(':un',$uemail);
-                $statment->execute();
+    //             $sql="SELECT * FROM userdb WHERE email=:un ";
+    //             $statment=$conn->prepare($sql);
+    //             $statment->bindParam(':un',$uemail);
+    //             $statment->execute();
 
-                if ( $statment->rowCount() == 0) {
-                    $stmt->bindParam(':uname', $uname, PDO::PARAM_STR);
-                    $stmt->bindParam(':uemail', $uemail, PDO::PARAM_STR);
-                    $stmt->bindParam(':upassword', $upassword, PDO::PARAM_STR);
-                    $stmt->bindParam(':act', $role, PDO::PARAM_INT);
-                    $stmt->bindParam(':pfile', $profile, PDO::PARAM_STR);
-                    $stmt->execute();
+    //             if ( $statment->rowCount() == 0) {
+    //                 $stmt->bindParam(':uname', $uname, PDO::PARAM_STR);
+    //                 $stmt->bindParam(':uemail', $uemail, PDO::PARAM_STR);
+    //                 $stmt->bindParam(':upassword', $upassword, PDO::PARAM_STR);
+    //                 $stmt->bindParam(':act', $role, PDO::PARAM_INT);
+    //                 $stmt->bindParam(':pfile', $profile, PDO::PARAM_STR);
+    //                 $stmt->execute();
 
-                    if ( $stmt->rowCount() == 1) {
-                        header("location: ../Logging.inc.php");
-                    } else {
-                        header("location: ../SignUp.inc.php?er=1");  
-                    }
-                } else {
-                    header("location: ../SignUp.inc.php?er2=1");
-                }
+    //                 if ( $stmt->rowCount() == 1) {
+    //                     header("location: ../Logging.inc.php");
+    //                 } else {
+    //                     header("location: ../SignUp.inc.php?er=1");  
+    //                 }
+    //             } else {
+    //                 header("location: ../SignUp.inc.php?er2=1");
+    //             }
         
-                $conn = null;
-            } catch(PDOException $e){
-                header("location: ../SignUp.inc.php?er=1?"); 
-        }
-    }
+    //             $conn = null;
+    //         } catch(PDOException $e){
+    //             header("location: ../SignUp.inc.php?er=1?"); 
+    //     }
+    // }
        
-    } else {
-        header("location: ../SignUp.inc.php?er3=3?");
+        } else {
+            echo strcmp($upassword,$cPassword);
+        // header("location: ../SignUp.inc.php?er3=3?");
     }        
 
 ?>

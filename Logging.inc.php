@@ -15,6 +15,9 @@
             if($_REQUEST['er'] == 1){
                 echo "Loging Error<br><br>";
             }
+            if($_REQUEST['er'] == 2){
+                echo "<b>Log in success</b><br><br>";
+            }
         }
     ?>
 
