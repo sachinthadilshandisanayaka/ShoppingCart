@@ -54,7 +54,7 @@
                                 if ( $statment->rowCount() == 0) {
                                     $stmt->bindParam(':uname', $uname, PDO::PARAM_STR);
                                     $stmt->bindParam(':uemail', $uemail, PDO::PARAM_STR);
-                                    $stmt->bindParam(':upassword', $upassword, PDO::PARAM_STR);
+                                    $stmt->bindParam(':upassword', md5($upassword), PDO::PARAM_STR);
                                     $stmt->bindParam(':act', $role, PDO::PARAM_INT);
                                     $stmt->bindParam(':pfile', $profile, PDO::PARAM_STR);
                                     $stmt->execute();

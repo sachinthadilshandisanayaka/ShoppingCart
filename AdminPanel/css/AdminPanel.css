@@ -1,0 +1,24 @@
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+}
+.header-link{
+    margin-top: 0;
+    width: 100%;
+    height: 90px;
+    text-align: center;
+    background-color: #5D6D7E;
+    color: white;
+}
+.right-nav{
+    background-color: aqua;
+    float: right;
+    width: 70%;
+    height: 400px;
+}
+.left-nav {
+    background-color: antiquewhite;
+    width: 20%;
+}
