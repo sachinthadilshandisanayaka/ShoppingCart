@@ -11,14 +11,34 @@ body{
     text-align: center;
     background-color: #5D6D7E;
     color: white;
+    box-shadow: 3px 2px 5px black;
 }
 .right-nav{
-    background-color: aqua;
+    background-color: #EBEDEF;
     float: right;
-    width: 70%;
-    height: 400px;
+    width: 85%;
+    height: 500px;
+    margin-top: -20px;
 }
 .left-nav {
-    background-color: antiquewhite;
-    width: 20%;
+    background-color:#2E4053;
+    width: 15%;
+    padding: 50px 0 50px 0;
+    margin-top: -20px;
+    height: 100%;
+    font-family: Brush Script Std;
+    font-size: large;
+}
+.modify{
+    padding: 10px;
+    margin-top: 3px;
+    border-bottom-right-radius: 60px;
+    border-top-right-radius: 60px;
+    color: white;
+    transition:.2s ease-in-out;
+}
+.modify:hover{
+    cursor: pointer;
+    box-shadow: 1px 1px 5px black;
+    background-color: #EC407A;
 }

@@ -20,10 +20,13 @@
     <section class="left-nav">
         <div class="modify">Add seller</div>
         <div class="modify">Remove seller</div>
-        <div class="modify">new feature</div>
-        <div class="modify">new feature</div>
-        <div class="modify">new feature</div>
-        <div class="modify">new feature</div>
+        <div class="modify">Oders</div>
+        <div class="modify">Add oders</div>
+        <div class="modify">Cart</div>
+        <div class="modify">Update seller</div>
+        <div class="modify">Update Oder</div>
+        <div class="modify">Dashbord</div>
+        <div class="modify">New Feature</div>
     </section>
 </body>
 </html>
