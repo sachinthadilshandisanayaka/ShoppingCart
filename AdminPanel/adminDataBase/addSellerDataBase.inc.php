@@ -85,6 +85,13 @@
                                         foreach($result as $row) {
                                             $SID = $row['SID'];
                                             
+                                            try{
+                                                $stm4 = $conn->prepare("INSERT INTO SELLERITEMS ()");
+                                            } catch(PDOException $e) {
+                                                echo $e;
+                                            }
+                                            
+
                                         }
 
                                     } else{

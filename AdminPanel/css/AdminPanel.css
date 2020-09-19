@@ -226,7 +226,7 @@ input[type=text], input[type=password], input[type=tel], input[type=file] {
   .add-items{
     margin-top: 15px;
     color: #2196F3;
-    display: none;
+    /* display: none; */
     transition: .2s;
     /* display: block; */
   }

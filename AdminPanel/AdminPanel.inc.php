@@ -65,7 +65,7 @@
         </label>
       </div>
 
-      <div class="add-items" id="add-items">
+      <div class="add-items" id="add-items" style="display: none;">
       
         <label for="ProductPhoto"><b>Item Photo</b></label>
         <input type="file" name="pfile" class="inputItems" id="inputItems0">
@@ -96,7 +96,6 @@
 
 <script>
 // Get the modal
-var i = 2;
 var modal = document.getElementById('id01');
 
 // When the user clicks anywhere outside of the modal, close it
@@ -106,21 +105,22 @@ window.onclick = function(event) {
     }
 }
   function addItem() {
+    var test = document.getElementById("add-items").style.display;
 
-    if ( window.i%2 == 0) {
+    if ( test == "none") {
       document.getElementById("add-items").style.display = "block";
       document.getElementById("inputItems1").required = true;
       document.getElementById("inputItems2").required = true;
       document.getElementById("inputItems3").required = true;
       document.getElementById("inputItems4").required = true;
-      i++;
+      
     } else {
       document.getElementById("add-items").style.display = "none";
       document.getElementById("inputItems1").required = false;
       document.getElementById("inputItems2").required = false;
       document.getElementById("inputItems3").required = false;
       document.getElementById("inputItems4").required = false;
-      i++;
+      
     }
     
   }
