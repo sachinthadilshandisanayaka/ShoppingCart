@@ -34,7 +34,7 @@
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="adminDataBase/addSellerDataBase.inc.php" method="POST" enctype="multipart/form-data">
+  <form class="modal-content animate" id="form-01" action="adminDataBase/addSellerDataBase.inc.php" method="POST" enctype="multipart/form-data">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->

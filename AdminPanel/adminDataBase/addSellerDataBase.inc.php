@@ -86,8 +86,20 @@
                                             $SID = $row['SID'];
                                             
                                             try{
-                                                $stm4 = $conn->prepare("INSERT INTO SELLERITEMS (IDescription,IPrice,IQuntity,SupID,,IName) VALUES 
+                                                $stm4 = $conn->prepare("INSERT INTO SELLERITEMS (IDescription,IPrice,IQuntity,SupID,IName) VALUES 
                                                         (:ides,:iprice,:iqun,:isid,:iname)");
+                                                $stm4->bindParam(':ides', $PDescription);
+                                                $stm4->bindParam(':iprice', $PPrice);
+                                                $stm4->bindParam(':iqun', $PQuantity);
+                                                $stm4->bindParam('isid', $SID);
+                                                $stm4->bindParam(':iname', $PName);
+                                                $stm4->execute();
+
+                                                if($stm4->rowCount() == 1) {
+                                                    echo "<br>Item added.............<br>";
+                                                } else {
+                                                    echo "not item added";
+                                                }
 
                                             } catch(PDOException $e) {
                                                 echo $e;
