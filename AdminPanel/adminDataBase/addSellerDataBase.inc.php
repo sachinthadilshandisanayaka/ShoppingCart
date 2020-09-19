@@ -112,11 +112,40 @@
 
                                                     if($fileName2 != "") {
                                                         if( in_array($fileActualExt2, $allow)) {
-                                                            $fileNewName = uniqid('', true).".".$fileActualExt;
-                                                            $fileDestination = "itemUploads/".$fileNewName;
-                                                            move_uploaded_file($fileTmpName, $fileDestination);
-                                                            echo 'Upload is Success';
+                                                            $fileNewName2 = uniqid('', true).".".$fileActualExt2;
+                                                            $fileDestination2 = "itemUploads/".$fileNewName2;
+                                                            move_uploaded_file($fileTmpName2, $fileDestination2);
+                                                            echo "<br> item photo Upload is Success <br>";
+
+                                                            $sql3 = "SELECT IID FROM selleritems";
+                                                            $stm5 = $conn->prepare($sql3);
+                                                            $stm5->execute();
+                                                            $result2 = $stm5->fetchAll();
+                                                            foreach($result2 as $row2) {
+                                                                $lastID = $row2['IID'];
+                                                            }
+                                                            echo $lastID;
+                                                            //..............
+                                                            try{
+                                                                $stm6 = $conn->prepare("INSERT INTO itemphoto (PID,photo) VALUES 
+                                                                        (:pid,:pphoto)");
+                                                                $stm6->bindParam(':pid', $lastID);
+                                                                $stm6->bindParam(':pphoto', $fileNewName2);
+                                                                $stm6->execute();
+
+                                                                if($stm6->rowCount() == 1) {
+                                                                    header("Location:");
+                                                                } else{
+                                                                    echo "<br>cant added to database<br>";
+                                                                }
+                                                            } catch(PDOException $e){
+                                                                echo $e;
+                                                            }
+                        
+                                                            if($stm3->rowCount() == 1) {}
                                                         }
+                                                    } else{
+                                                        echo "<br>file name erro<br>";
                                                     }
 
                                                 } else {
