@@ -28,7 +28,7 @@ body{
 .navigate-logging button:hover{
     box-shadow: 1px 1px 2px black;
 }
-.form-1{
+/* .form-1{
     box-shadow: 2px 2px 10px black;
     margin-left: 30%;
     margin-right: 30%;
@@ -56,4 +56,54 @@ body{
 }
 .button1:hover {
     box-shadow: 1px 1px 3px rgba(0, 0, 0, .9);
+} */
+/* ------------- */
+
+.input-container {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .icon {
+    padding: 10px;
+    background: dodgerblue;
+    color: white;
+    min-width: 50px;
+    text-align: center;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+  }
+  
+  .input-field:focus {
+    border: 2px solid dodgerblue;
+  }
+  
+  /* Set a style for the submit button */
+  .btn {
+    background-color: dodgerblue;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  .btn:hover {
+    opacity: 1;
+  }
+  .form-1{
+    box-shadow: 2px 2px 10px black;
+    position: relative;
+    top: 100px;
+    padding: 20px;
+    padding-bottom: 40px;
+    text-align: center;
+    border-radius: 15px;
 }
