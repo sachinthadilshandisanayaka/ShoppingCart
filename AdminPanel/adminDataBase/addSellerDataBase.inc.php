@@ -32,7 +32,13 @@
                     move_uploaded_file($fileTmpName, $fileDestination);
                     echo 'Upload is Success';
 
-                    
+                    try {
+                        $stm2 = $conn->prepare("INSERT INTO sellerDetails (SName,SAddress,SEmail,SPhone,SPhoto) VALUES(:sname,:saddress,
+                                    :semail, :sphone, :sphoto)");
+                        
+                    } catch(PDOException $e){
+                        echo "database error";
+                    }
 
                 } else{
                     echo "file size is high";
