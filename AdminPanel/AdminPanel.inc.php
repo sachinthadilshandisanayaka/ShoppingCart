@@ -65,7 +65,7 @@
         </label>
       </div>
 
-      <!-- <div class="add-items" id="add-items">
+      <div class="add-items" id="add-items">
       
         <label for="ProductPhoto"><b>Item Photo</b></label>
         <input type="file" name="pphoto" class="inputItems" id="inputItems0">
@@ -82,7 +82,7 @@
         <label for="PQuantity"><b>Quantity</b></label>
         <input type="text" placeholder="Quantity" name="pdQuantity" class="inputItems" id="inputItems4"> 
    
-      </div> -->
+      </div>
         
       <button type="submit">Add Seller</button>
      
@@ -105,25 +105,25 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-  // function addItem() {
+  function addItem() {
 
-  //   if ( window.i%2 == 0) {
-  //     document.getElementById("add-items").style.display = "block";
-  //     document.getElementById("inputItems1").required = true;
-  //     document.getElementById("inputItems2").required = true;
-  //     document.getElementById("inputItems3").required = true;
-  //     document.getElementById("inputItems4").required = true;
-  //     i++;
-  //   } else {
-  //     document.getElementById("add-items").style.display = "none";
-  //     document.getElementById("inputItems1").required = false;
-  //     document.getElementById("inputItems2").required = false;
-  //     document.getElementById("inputItems3").required = false;
-  //     document.getElementById("inputItems4").required = false;
-  //     i++;
-  //   }
+    if ( window.i%2 == 0) {
+      document.getElementById("add-items").style.display = "block";
+      document.getElementById("inputItems1").required = true;
+      document.getElementById("inputItems2").required = true;
+      document.getElementById("inputItems3").required = true;
+      document.getElementById("inputItems4").required = true;
+      i++;
+    } else {
+      document.getElementById("add-items").style.display = "none";
+      document.getElementById("inputItems1").required = false;
+      document.getElementById("inputItems2").required = false;
+      document.getElementById("inputItems3").required = false;
+      document.getElementById("inputItems4").required = false;
+      i++;
+    }
     
-  // }
+  }
 </script>
 
 </body>
