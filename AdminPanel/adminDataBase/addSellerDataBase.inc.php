@@ -33,48 +33,58 @@
     } else {
         echo "OK...";
         // check image type
-        if( in_array($fileActualExt, $allow)) {
-            if($fileError == 0) {
-                if ($fileSize < 10097152) {
-
-                    $fileNewName = uniqid('', true).".".$fileActualExt;
-                    $fileDestination = "uploads/".$fileNewName;
-                    move_uploaded_file($fileTmpName, $fileDestination);
-                    echo 'Upload is Success';
-
-                    try {
-                        $stm2 = $conn->prepare("INSERT INTO sellerDetails (SName,SAddress,SEmail,SPhone,SPhoto) VALUES(:sname,:saddress,
-                                    :semail, :sphone, :sphoto)");
-                        
-                        $stm2->bindParam(':sname', $SName);
-                        $stm2->bindParam(':saddress', $SAddress);
-                        $stm2->bindParam(':semail', $SEmail);
-                        $stm2->bindParam(':sphone', $SPhone);
-                        $string = $fileNewName;
-                        $stm2->bindParam(':sphoto', $string);
-                        $stm2->execute();
-
-                        if ($stm2->rowCount() == 1 ) {
-                            echo "Seller info upload success";
-                        } else {
-                            echo "Cant upload seller data";
+       
+            if( in_array($fileActualExt, $allow) || $fileName == "") {
+                
+                    if ($fileSize < 10097152) {
+    
+                        $fileNewName = uniqid('', true).".".$fileActualExt;
+                        $fileDestination = "uploads/".$fileNewName;
+                        move_uploaded_file($fileTmpName, $fileDestination);
+                        echo 'Upload is Success';
+    
+                        try {
+                            $stm2 = $conn->prepare("INSERT INTO sellerDetails (SName,SAddress,SEmail,SPhone,SPhoto) VALUES(:sname,:saddress,
+                                        :semail, :sphone, :sphoto)");
+                            
+                            $stm2->bindParam(':sname', $SName);
+                            $stm2->bindParam(':saddress', $SAddress);
+                            $stm2->bindParam(':semail', $SEmail);
+                            $stm2->bindParam(':sphone', $SPhone);
+                            $string = $fileNewName;
+                            if ($fileName != ""){
+                                $stm2->bindParam(':sphoto', $string);
+                            } else {
+                                $string2 = "";
+                                $stm2->bindParam(':sphoto',$string2);
+                            }
+                            
+                            $stm2->execute();
+    
+                            if ($stm2->rowCount() == 1 ) {
+                                echo "Seller info upload success";
+    
+                                $PName = trim($_REQUEST['pdname']);
+                                $PPrice = trim($_REQUEST['pdprice']);
+                                $PDescription = trim($_REQUEST['pdDescription']);
+                                $PQuantity = trim($_REQUEST['pdQuantity']);
+                                
+    
+                            } else {
+                                echo "Cant upload seller data";
+                            }
+    
+                        } catch(PDOException $e){
+                            echo "database error";
                         }
-
-                    } catch(PDOException $e){
-                        echo "database error";
+    
+                    } else{
+                        echo "file size is high";
                     }
-
-                } else{
-                    echo "file size is high";
-                }
-
-            } else {
-                echo "Image error";
+    
+            } else{
+                echo "Image is not support, uploaded image type should be jpg, jpeg or png";
             }
-
-        } else{
-            echo "Image is not support, uploaded image type should be jpg, jpeg or png";
-        }
 
     }
 
