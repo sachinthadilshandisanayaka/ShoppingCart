@@ -42,6 +42,7 @@
     <h1 class="header-addSeller">ADD SELLER</h1>
     <div class="container">
     <div class="input-container">
+      <label for="Profile"><b>Profile Photo</b></label>
             <i class="fa fa-user icon"></i>
             <input type="file" name="file" id="ProfilePicture" accept="image/*" style="padding: 10px;">
 
@@ -57,16 +58,31 @@
       <input type="text" placeholder="Enter Address" name="uaddress" required>
 
       <label for="phone"><b>Phone number</b></label>
-      <input type="number" placeholder="Telephone" name="uname">
+      <input type="tel" placeholder="Telephone" name="telephone" pattern="[0-9]{10}">
 
-      <!-- <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required> -->
+      <div class="add-item-button">
+      <b><p style="color: #3498DB;">Add Item</p></b>
+      <label class="switch">
+        <input type="checkbox" class="input" onclick="addItem()">
+        <span class="slider round"></span>
+      </label>
+      </div>
 
-      <!-- <label for="productname"><b>Product name</b></label>
-      <input type="text" placeholder="Product name" name="productName" required>
+      <div class="add-items" id="add-items">
+      
+        <label for="ProductName"><b>Product Name</b></label>
+        <input type="text" placeholder="Product name" name="pdname" class="inputItems" id="inputItems1">
 
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required> -->
+        <label for="ProductPrice"><b>Price</b></label>
+        <input type="text" placeholder="Price" name="pdprice" class="inputItems" id="inputItems2">
+
+        <label for="productname"><b>Description</b></label>
+        <input type="text" placeholder="Description" name="pdDescription" class="inputItems" id="inputItems3">
+
+        <label for="PQuantity"><b>Quantity</b></label>
+        <input type="text" placeholder="Quantity" name="pdQuantity" class="inputItems" id="inputItems4"> 
+   
+      </div>
         
       <button type="submit">Add Seller</button>
      
@@ -80,6 +96,7 @@
 
 <script>
 // Get the modal
+var i = 2;
 var modal = document.getElementById('id01');
 
 // When the user clicks anywhere outside of the modal, close it
@@ -88,6 +105,25 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+  function addItem() {
+
+    if ( window.i%2 == 0) {
+      document.getElementById("add-items").style.display = "block";
+      document.getElementById("inputItems1").required = true;
+      document.getElementById("inputItems2").required = true;
+      document.getElementById("inputItems3").required = true;
+      document.getElementById("inputItems4").required = true;
+      i++;
+    } else {
+      document.getElementById("add-items").style.display = "none";
+      document.getElementById("inputItems1").required = false;
+      document.getElementById("inputItems2").required = false;
+      document.getElementById("inputItems3").required = false;
+      document.getElementById("inputItems4").required = false;
+      i++;
+    }
+    
+  }
 </script>
 
 </body>
