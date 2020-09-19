@@ -134,7 +134,7 @@
                                                                 $stm6->execute();
 
                                                                 if($stm6->rowCount() == 1) {
-                                                                    header("Location:");
+                                                                    header("Location: ../AdminPanel.inc.php");
                                                                 } else{
                                                                     echo "<br>cant added to database<br>";
                                                                 }
