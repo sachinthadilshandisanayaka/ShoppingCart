@@ -70,6 +70,9 @@
 
       <div class="add-items" id="add-items">
       
+        <label for="ProductPhoto"><b>Item Photo</b></label>
+        <input type="file" name="pphoto" class="inputItems" id="inputItems0">
+
         <label for="ProductName"><b>Product Name</b></label>
         <input type="text" placeholder="Product name" name="pdname" class="inputItems" id="inputItems1">
 
