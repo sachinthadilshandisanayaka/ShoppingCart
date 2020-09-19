@@ -86,7 +86,9 @@
                                             $SID = $row['SID'];
                                             
                                             try{
-                                                $stm4 = $conn->prepare("INSERT INTO SELLERITEMS ()");
+                                                $stm4 = $conn->prepare("INSERT INTO SELLERITEMS (IDescription,IPrice,IQuntity,SupID,,IName) VALUES 
+                                                        (:ides,:iprice,:iqun,:isid,:iname)");
+
                                             } catch(PDOException $e) {
                                                 echo $e;
                                             }
