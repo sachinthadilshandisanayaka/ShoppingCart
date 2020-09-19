@@ -34,19 +34,16 @@
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="adminDataBase/addSellerDataBase.inc.php" method="post">
+  <form class="modal-content animate" action="adminDataBase/addSellerDataBase.inc.php" method="POST" enctype="multipart/form-data">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
     </div>
     <h1 class="header-addSeller">ADD SELLER</h1>
     <div class="container">
-    <div class="input-container">
-      <label for="Profile"><b>Profile Photo</b></label>
-            <i class="fa fa-user icon"></i>
-            <input type="file" name="file" id="ProfilePicture" accept="image/*" style="padding: 10px;">
 
-    </div>
+      <label for="Profile"><b>Profile Photo</b></label>
+      <input type="file" name="file" id="ProfilePicture" accept="image/*" style="padding: 10px;">
 
       <label for="uname"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="uname" required>
@@ -62,13 +59,13 @@
 
       <div class="add-item-button">
       <b><p style="color: #3498DB;">Add Item</p></b>
-      <label class="switch">
-        <input type="checkbox" class="input" onclick="addItem()">
-        <span class="slider round"></span>
-      </label>
+        <label class="switch">
+          <input type="checkbox" class="input" onclick="addItem()">
+          <span class="slider round"></span>
+        </label>
       </div>
 
-      <div class="add-items" id="add-items">
+      <!-- <div class="add-items" id="add-items">
       
         <label for="ProductPhoto"><b>Item Photo</b></label>
         <input type="file" name="pphoto" class="inputItems" id="inputItems0">
@@ -85,7 +82,7 @@
         <label for="PQuantity"><b>Quantity</b></label>
         <input type="text" placeholder="Quantity" name="pdQuantity" class="inputItems" id="inputItems4"> 
    
-      </div>
+      </div> -->
         
       <button type="submit">Add Seller</button>
      
@@ -108,25 +105,25 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-  function addItem() {
+  // function addItem() {
 
-    if ( window.i%2 == 0) {
-      document.getElementById("add-items").style.display = "block";
-      document.getElementById("inputItems1").required = true;
-      document.getElementById("inputItems2").required = true;
-      document.getElementById("inputItems3").required = true;
-      document.getElementById("inputItems4").required = true;
-      i++;
-    } else {
-      document.getElementById("add-items").style.display = "none";
-      document.getElementById("inputItems1").required = false;
-      document.getElementById("inputItems2").required = false;
-      document.getElementById("inputItems3").required = false;
-      document.getElementById("inputItems4").required = false;
-      i++;
-    }
+  //   if ( window.i%2 == 0) {
+  //     document.getElementById("add-items").style.display = "block";
+  //     document.getElementById("inputItems1").required = true;
+  //     document.getElementById("inputItems2").required = true;
+  //     document.getElementById("inputItems3").required = true;
+  //     document.getElementById("inputItems4").required = true;
+  //     i++;
+  //   } else {
+  //     document.getElementById("add-items").style.display = "none";
+  //     document.getElementById("inputItems1").required = false;
+  //     document.getElementById("inputItems2").required = false;
+  //     document.getElementById("inputItems3").required = false;
+  //     document.getElementById("inputItems4").required = false;
+  //     i++;
+  //   }
     
-  }
+  // }
 </script>
 
 </body>
