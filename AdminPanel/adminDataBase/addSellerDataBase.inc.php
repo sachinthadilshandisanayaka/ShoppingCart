@@ -69,7 +69,30 @@
                                 $PDescription = trim($_REQUEST['pdDescription']);
                                 $PQuantity = trim($_REQUEST['pdQuantity']);
                                 
-    
+                                // Product adding..
+
+                                if ($PName != "") {
+                                    
+                                    $sql2 = "SELECT SID FROM sellerDetails WHERE SEmail=:emailGetID";
+                                    $stm3 = $conn->prepare($sql2);
+                                    $stm3->bindParam(':emailGetID', $SEmail);
+                                    $stm3->execute();
+
+                                    if($stm3->rowCount() == 1) {
+                                        
+                                        // $result = $stm3->setFetchMode(PDO::FETCH_ASSOC);
+                                        $result = $stm3->fetchAll();
+                                        foreach($result as $row) {
+                                            $SID = $row['SID'];
+                                            
+                                        }
+
+                                    } else{
+                                        echo "<br>Database read error";
+                                    }
+
+                                }
+                                // ......................
                             } else {
                                 echo "Cant upload seller data";
                             }
