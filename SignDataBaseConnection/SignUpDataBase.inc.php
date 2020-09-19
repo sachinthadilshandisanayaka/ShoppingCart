@@ -120,8 +120,8 @@
     // }
        
         } else {
-            echo strcmp($upassword,$cPassword);
-        // header("location: ../SignUp.inc.php?er3=3?");
+            // echo strcmp($upassword,$cPassword);
+        header("location: ../SignUp.inc.php?er3=3?");
     }        
 
 ?>
