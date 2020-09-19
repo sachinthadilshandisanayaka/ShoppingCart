@@ -97,6 +97,28 @@
 
                                                 if($stm4->rowCount() == 1) {
                                                     echo "<br>Item added.............<br>";
+
+                                                    //add item photo........................................
+
+                                                    $file2 = $_FILES['pfile'];
+                                                    $fileName2 = $_FILES['pfile']['name'];
+                                                    $fileTmpName2 = $_FILES['pfile']['tmp_name'];
+                                                    $fileSize2 = $_FILES['pfile']['size'];
+                                                    $fileError2 = $_FILES['pfile']['error'];
+                                                    $fileType2 = $_FILES['pfile']['type'];
+                                                    $fileExt2 = explode('.', $fileName2);
+                                                    $fileActualExt2 = strtolower(end($fileExt2));
+                                                    $allow = array('jpg', 'jpeg', 'png');
+
+                                                    if($fileName2 != "") {
+                                                        if( in_array($fileActualExt2, $allow)) {
+                                                            $fileNewName = uniqid('', true).".".$fileActualExt;
+                                                            $fileDestination = "itemUploads/".$fileNewName;
+                                                            move_uploaded_file($fileTmpName, $fileDestination);
+                                                            echo 'Upload is Success';
+                                                        }
+                                                    }
+
                                                 } else {
                                                     echo "not item added";
                                                 }
