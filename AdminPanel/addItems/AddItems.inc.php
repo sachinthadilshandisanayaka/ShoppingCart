@@ -26,8 +26,8 @@
                 foreach($result as $row){
                     echo "<div class='seller'>
                     <div class='seller-image'>
-                    <img src='../adminDataBase/uploads/".$row['SPHOTO']."' alt='' >
-                     </div>
+                         <img src='../adminDataBase/uploads/".$row['SPHOTO']."' alt='' >
+                    </div>
                            <p>".$row['SNAME']."</p><br><p>".$row['SADDRESS']."</p><br><p>".$row['SEMAIL']."</p><br>
                            </div>";
                     // echo $row['SName']." ".$row['SAddress']."<br>";
