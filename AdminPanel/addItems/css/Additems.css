@@ -9,11 +9,12 @@
 }
 .seller-image{
     width: 200px;
+    overflow: hidden;
     height: 200px;
     border-radius: 50%;
 }
 .seller-image img{
-    overflow: hidden;
+
     width: 100%;
     height: 100%;
 }
