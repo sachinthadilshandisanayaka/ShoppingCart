@@ -9,8 +9,8 @@
 }
 .seller-image{
     width: 200px;
-    overflow: hidden;
     height: 200px;
+    overflow: hidden;
     border-radius: 50%;
 }
 .seller-image img{
