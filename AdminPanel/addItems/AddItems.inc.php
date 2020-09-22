@@ -12,9 +12,6 @@
 <body>
     <div class="sellers">
         <h1>SELLERS</h1>
-        <div class="seller-image">
-             <img src="../adminDataBase/uploads/5f6a3d7e936cf8.24887762.jpg" alt="" >
-        </div>
         <?php
         try{
             $stm = $conn->prepare("SELECT * FROM sellerdetails");
