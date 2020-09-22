@@ -99,7 +99,9 @@
 function closeFunction(){
   document.getElementById('id01').style.display='none';
   document.getElementById("form-01").reset();
-
+}
+function closeFunction2(){
+  document.getElementById("form-01").reset();
 }
 // Get the modal
 var modal = document.getElementById('id01');
