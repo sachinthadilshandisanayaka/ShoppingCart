@@ -1,3 +1,5 @@
 <?php
-    include "../../SignDataBaseConnection/db.inc.php";
+    require "../../SignDataBaseConnection/db.inc.php";
+
+
 ?>
