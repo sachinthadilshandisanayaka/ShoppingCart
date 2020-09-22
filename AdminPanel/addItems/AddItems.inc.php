@@ -28,7 +28,9 @@
                     <div class='seller-image'>
                          <img src='../adminDataBase/uploads/".$row['SPHOTO']."' alt='' >
                     </div>
+                    <div>
                            <p>".$row['SNAME']."</p><br><p>".$row['SADDRESS']."</p><br><p>".$row['SEMAIL']."</p><br>
+                    </div>
                            </div>";
                     // echo $row['SName']." ".$row['SAddress']."<br>";
                 }
