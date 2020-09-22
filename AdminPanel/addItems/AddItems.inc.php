@@ -25,11 +25,11 @@
             } else{
                 foreach($result as $row){
                     echo "<div class='seller'>
+                    <div class='seller-detail'>
+                        <p>Name :".$row['SNAME']."</p><p>Address :".$row['SADDRESS']."</p><p>Email :".$row['SEMAIL']."</p><p>Phone number:".$row['SPHONE']."<br>
+                    </div>
                     <div class='seller-image'>
                          <img src='../adminDataBase/uploads/".$row['SPHOTO']."' alt='' >
-                    </div>
-                    <div>
-                           <p>".$row['SNAME']."</p><br><p>".$row['SADDRESS']."</p><br><p>".$row['SEMAIL']."</p><br>
                     </div>
                            </div>";
                     // echo $row['SName']." ".$row['SAddress']."<br>";
