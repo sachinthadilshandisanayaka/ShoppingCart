@@ -163,6 +163,8 @@
                                         echo "<br>Database read error";
                                     }
 
+                                } else{
+                                    header("Location: ../AdminPanel.inc.php");
                                 }
                                 // ......................
                             } else {
