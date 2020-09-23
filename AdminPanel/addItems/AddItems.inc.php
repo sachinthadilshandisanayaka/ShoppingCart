@@ -71,7 +71,7 @@
                     <input type="text" placeholder="Price" name="itemPrice" required>
 
                     <label for="Description"><b>Description</b></label>
-                    <input type="password" placeholder="Description" name="itemDesc" required>
+                    <input type="text" placeholder="Description" name="itemDesc" required>
 
                     <label for="Quantity"><b>Quantity</b></label>
                     <input type="text" placeholder="Quantity" name="itemQuantity" required>
