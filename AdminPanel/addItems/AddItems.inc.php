@@ -102,7 +102,7 @@ var modal = document.getElementById('id01');
 function openForm(event, event2){
     document.getElementById('id01').style.display='block';
     // event = document.getElementById('userName').getAttributeNode('placeholder').value;
-     document.getElementById('seller-name').innerHTML = "Seller Name : "+ event + " " + event2;
+     document.getElementById('seller-name').innerHTML = "Seller Name : "+ event + " ID " + event2;
      document.getElementById('sellerId').getAttributeNode('value').value = event2;
 }
 function closeForm(){
