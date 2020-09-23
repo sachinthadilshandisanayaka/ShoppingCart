@@ -46,7 +46,7 @@
                                 $role = 1;
                                 $profile = $fileNewName;
                 
-                                $sql="SELECT * FROM userdb WHERE email=:un ";
+                                $sql="SELECT * FROM userdb WHERE email=:un";
                                 $statment=$conn->prepare($sql);
                                 $statment->bindParam(':un',$uemail);
                                 $statment->execute();
