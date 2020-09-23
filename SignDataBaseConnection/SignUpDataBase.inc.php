@@ -41,7 +41,7 @@
                                 $stmt = $conn->prepare("INSERT INTO userdb (username,email,password,role, profilefile) 
                                 VALUES (:uname, :uemail, :upassword, :act, :pfile)");
                 
-                                $uname = trim($_POST['username']);
+                                $uname = trim($_POST['usrnm']);
                                 $uemail = trim($_POST['email']);
                                 $role = 1;
                                 $profile = $fileNewName;
