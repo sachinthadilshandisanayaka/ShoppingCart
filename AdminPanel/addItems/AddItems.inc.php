@@ -39,7 +39,7 @@
                     if($row['SPHOTO'] == null){
                         $photoName = "defaultP.png";
                     }
-                    echo "<div class='seller min5' onclick='openForm(this.id)' id='".$passValue."'>
+                    echo "<div class='seller min5' onclick='openForm(this.id, ".$row['SID'].")' id='".$passValue."'>
                     <span>click for add item</span>
                     <div class='seller-detail'>
                         <p>Name :".$row['SNAME']."</p><p>Address :".$row['SADDRESS']."</p><p>Email :".$row['SEMAIL']."</p><p>Phone number:".$row['SPHONE']."</p>
@@ -64,6 +64,7 @@
                 <h1>Add Item</h1>
                 <p id="seller-name"></p>
                 <hr>
+                    <input type="hidden" id="sellerId" class="sellerId" value="">
                     <label for="itemName"><b>Item Name</b></label>
                     <input type="text" placeholder="Item name" name="itemName" required>
 
@@ -98,10 +99,11 @@ var modal = document.getElementById('id01');
 //     document.getElementById('form-01').reset();
 //   }
 // }
-function openForm(event){
+function openForm(event, event2){
     document.getElementById('id01').style.display='block';
     // event = document.getElementById('userName').getAttributeNode('placeholder').value;
-     document.getElementById('seller-name').innerHTML = "Seller Name : "+ event;
+     document.getElementById('seller-name').innerHTML = "Seller Name : "+ event + " " + event2;
+     document.getElementById('sellerId').getAttributeNode('value').value = event2;
 }
 function closeForm(){
     document.getElementById('id01').style.display='none';
