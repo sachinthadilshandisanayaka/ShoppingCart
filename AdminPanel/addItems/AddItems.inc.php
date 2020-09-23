@@ -10,9 +10,11 @@
     <title>Document</title>
 </head>
 <body>
+<input type="text" name="" id="" placeholder="">
     <div class="sellers">
         <h1>Add Items for each sellers</h1>
         <?php
+       
         try{
             $stm = $conn->prepare("SELECT * FROM sellerdetails");
             $stm->execute();
@@ -32,10 +34,12 @@
                 }
                 foreach($result as $row){
                     $photoName = $row['SPHOTO'];
+                    $passValue = $row['SNAME'];
                     if($row['SPHOTO'] == null){
                         $photoName = "defaultP.png";
                     }
-                    echo "<div class='seller min5' onclick='openForm()' value=".$row['SNAME']." id='seller'>
+                    echo "<div class='seller min5' onclick='openForm(this)' id='seller'>
+                    <input type='hidden' name='' id='userName' placeholder='".$passValue."' >
                     <span>click for add item</span>
                     <div class='seller-detail'>
                         <p>Name :".$row['SNAME']."</p><p>Address :".$row['SADDRESS']."</p><p>Email :".$row['SEMAIL']."</p><p>Phone number:".$row['SPHONE']."<br>
@@ -45,6 +49,7 @@
                     </div>
                            </div>";
                     // echo $row['SName']." ".$row['SAddress']."<br>";
+              
                 }
             }
         } catch(PDOException $e) {
@@ -90,10 +95,10 @@ var modal = document.getElementById('id01');
 //     document.getElementById('form-01').reset();
 //   }
 // }
-function openForm(){
+function openForm(event){
     document.getElementById('id01').style.display='block';
-    event = document.getElementById('seller').getAttributeNode("value").value;
-    document.getElementById('seller-name').innerHTML = "Seller name : " + event;
+    // event = document.getElementById('userName').getAttributeNode('placeholder').value;
+     document.getElementById('seller-name').innerHTML = event.target.tagName;
 }
 function closeForm(){
     document.getElementById('id01').style.display='none';
