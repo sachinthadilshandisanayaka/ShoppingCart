@@ -31,13 +31,17 @@
 
                 }
                 foreach($result as $row){
+                    $photoName = $row['SPHOTO'];
+                    if($row['SPHOTO'] == null){
+                        $row['SPHOTO)'] = "defaultP.png";
+                    }
                     echo "<div class='seller min5' onclick='openForm()' value=".$row['SNAME']." id='seller'>
                     <span>click for add item</span>
                     <div class='seller-detail'>
                         <p>Name :".$row['SNAME']."</p><p>Address :".$row['SADDRESS']."</p><p>Email :".$row['SEMAIL']."</p><p>Phone number:".$row['SPHONE']."<br>
                     </div>
                     <div class='seller-image'>
-                         <img src='../adminDataBase/uploads/".$row['SPHOTO']."' alt='' >
+                         <img src='../adminDataBase/uploads/".$photoName."' alt='' >
                     </div>
                            </div>";
                     // echo $row['SName']." ".$row['SAddress']."<br>";
