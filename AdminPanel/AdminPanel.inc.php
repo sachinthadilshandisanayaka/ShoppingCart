@@ -20,7 +20,7 @@
 
     <section class="left-nav">
         <div class="modify" onclick="document.getElementById('id01').style.display='block'">Add seller</div>
-        <div class="modify">Add Item</div>
+        <div class="modify"><a href="addItems/AddItems.inc.php">Add Item</a></div>
         <div class="modify">View Items</div>
         <div class="modify">Remove seller</div>
         <div class="modify">Orders</div>
