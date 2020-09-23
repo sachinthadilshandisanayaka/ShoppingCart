@@ -4,7 +4,7 @@
     $PDescription = trim($_REQUEST['itemDesc']);
     $PPrice = trim($_REQUEST['itemPrice']);
     $PQuantity = trim($_REQUEST['itemQuantity']);
-    $SID = trim($_REQUEST['sellerId']);
+    $SID = trim($_REQUEST['sellerid']);
     $PName = trim($_REQUEST['itemName']);
 
     try {
@@ -16,6 +16,10 @@
         $stm->bindParam('isid', $SID);
         $stm->bindParam(':iname', $PName);
         $stm->execute();
+
+        if($stm->rowCount() == 1){
+            header("Location: ../AddItems.inc.php");
+        }
 
     } catch(PDOException $e){
         echo $e;

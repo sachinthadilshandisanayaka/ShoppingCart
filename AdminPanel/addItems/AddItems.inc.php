@@ -59,12 +59,12 @@
         ?>
         <div id="id01" class="modal">
             <span onclick="closeForm()" class="close" title="Close Modal">&times;</span>
-            <form class="modal-content animate" action="additemDataBase/AdditemDB.inc.php" id="form-01">
+            <form class="modal-content animate" action="additemDataBase/AdditemDB.inc.php" id="form-01" method="GET">
                 <div class="container">
                 <h1>Add Item</h1>
                 <p id="seller-name"></p>
                 <hr>
-                    <input type="hidden" id="sellerId" class="sellerId" value="">
+                    <input type="hidden" id="sellerId" name="sellerid" value="">
                     <label for="itemName"><b>Item Name</b></label>
                     <input type="text" placeholder="Item name" name="itemName" required>
 
