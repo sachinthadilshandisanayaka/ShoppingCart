@@ -1,6 +1,3 @@
-.sellers{
-    /* border: 2px solid black; */
-}
 .seller{
     padding: 10px;
     /* text-align: center; */
@@ -25,8 +22,4 @@
     margin-right: 30px;
     width: 300px;
     float: right;
-}
-.seller div{
-    /* border: 1px solid black; */
-    /* display: flex; */
 }
