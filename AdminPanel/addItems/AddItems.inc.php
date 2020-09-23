@@ -38,8 +38,7 @@
                     if($row['SPHOTO'] == null){
                         $photoName = "defaultP.png";
                     }
-                    echo "<div class='seller min5' onclick='openForm(this)' id='seller'>
-                    <input type='hidden' name='' id='userName' placeholder='".$passValue."' >
+                    echo "<div class='seller min5' onclick='openForm(this.id)' id='".$passValue."'>
                     <span>click for add item</span>
                     <div class='seller-detail'>
                         <p>Name :".$row['SNAME']."</p><p>Address :".$row['SADDRESS']."</p><p>Email :".$row['SEMAIL']."</p><p>Phone number:".$row['SPHONE']."<br>
@@ -98,7 +97,7 @@ var modal = document.getElementById('id01');
 function openForm(event){
     document.getElementById('id01').style.display='block';
     // event = document.getElementById('userName').getAttributeNode('placeholder').value;
-     document.getElementById('seller-name').innerHTML = event.target.tagName;
+     document.getElementById('seller-name').innerHTML = "Seller Name : "+ event;
 }
 function closeForm(){
     document.getElementById('id01').style.display='none';
