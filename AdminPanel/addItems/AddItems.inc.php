@@ -58,7 +58,7 @@
         ?>
         <div id="id01" class="modal">
             <span onclick="closeForm()" class="close" title="Close Modal">&times;</span>
-            <form class="modal-content animate" action="/action_page.php" id="form-01">
+            <form class="modal-content animate" action="/" id="form-01">
                 <div class="container">
                 <h1>Add Item</h1>
                 <p id="seller-name"></p>
@@ -74,6 +74,9 @@
 
                     <label for="Quantity"><b>Quantity</b></label>
                     <input type="text" placeholder="Quantity" name="itemQuantity" required>
+
+                    <label for="ProductPhoto"><b>Item Photo</b></label>
+                    <input type="file" name="pfile" class="inputItems" id="inputItems0" required>
 
                 <div class="clearfix">
                     <button type="button" onclick="closeForm()" class="cancelbtn">Cancel</button>
