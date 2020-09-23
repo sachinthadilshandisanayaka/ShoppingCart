@@ -4,6 +4,7 @@
 }
 .seller{
     padding: 10px;
+    float: right;
     /* text-align: center; */
     margin-top: 10px;
     box-shadow: 1px 2px 5px black;

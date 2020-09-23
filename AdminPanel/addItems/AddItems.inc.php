@@ -24,7 +24,12 @@
             if ($result == null) {
                 echo "<p>No Sellers</p>";
             } else{
-                echo $stm->rowCount();
+                $itemCount = $stm->rowCount();
+                if ($itemCount == 1 ){
+                     
+                } elseif($itemCount == 2) {
+                    
+                }
                 foreach($result as $row){
                     echo "<div class='seller'>
                     <div class='seller-detail'>
