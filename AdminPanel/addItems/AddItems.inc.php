@@ -10,11 +10,12 @@
     <title>Document</title>
 </head>
 <body>
-<input type="text" name="" id="" placeholder="">
     <div class="sellers">
         <h1>Add Items for each sellers</h1>
         <?php
-       
+
+        $counter = 0;
+
         try{
             $stm = $conn->prepare("SELECT * FROM sellerdetails");
             $stm->execute();
@@ -41,14 +42,14 @@
                     echo "<div class='seller min5' onclick='openForm(this.id)' id='".$passValue."'>
                     <span>click for add item</span>
                     <div class='seller-detail'>
-                        <p>Name :".$row['SNAME']."</p><p>Address :".$row['SADDRESS']."</p><p>Email :".$row['SEMAIL']."</p><p>Phone number:".$row['SPHONE']."<br>
+                        <p>Name :".$row['SNAME']."</p><p>Address :".$row['SADDRESS']."</p><p>Email :".$row['SEMAIL']."</p><p>Phone number:".$row['SPHONE']."</p>
                     </div>
                     <div class='seller-image'>
                          <img src='../adminDataBase/uploads/".$photoName."' alt='' >
                     </div>
                            </div>";
                     // echo $row['SName']." ".$row['SAddress']."<br>";
-              
+                    $counter++;
                 }
             }
         } catch(PDOException $e) {
