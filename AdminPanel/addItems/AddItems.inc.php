@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="sellers">
-        <h1>SELLERS</h1>
+        <h1>Add Items for each sellers</h1>
         <?php
         try{
             $stm = $conn->prepare("SELECT * FROM sellerdetails");
@@ -25,13 +25,14 @@
                 echo "<p>No Sellers</p>";
             } else{
                 $itemCount = $stm->rowCount();
-                if ($itemCount == 1 ){
+                if ($itemCount  < 5 ){
                      
-                } elseif($itemCount == 2) {
-                    
+                } elseif($itemCount%2 == 0) {
+
                 }
                 foreach($result as $row){
-                    echo "<div class='seller'>
+                    echo "<div class='seller min5'>
+                    <span>click for add item</span>
                     <div class='seller-detail'>
                         <p>Name :".$row['SNAME']."</p><p>Address :".$row['SADDRESS']."</p><p>Email :".$row['SEMAIL']."</p><p>Phone number:".$row['SPHONE']."<br>
                     </div>

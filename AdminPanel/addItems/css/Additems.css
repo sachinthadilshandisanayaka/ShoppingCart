@@ -1,17 +1,42 @@
+body{
+    margin: 0;
+}
 .sellers{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     padding: 10px;
+    background-color: #BFC9CA;
 }
 .seller{
+    position: relative;
+    background-color: #34495E;
+    color: white;
     padding: 10px;
-    float: right;
+    /* float: right; */
     /* text-align: center; */
     margin-top: 10px;
     box-shadow: 1px 2px 5px black;
-    width: 450px;
+   
     height: 150px;
-    margin-left: 20px;
     /* border-radius: 30px 0 30px 0; */
+    transition: .2s;
+}
+.seller:hover{
+    cursor: pointer;
+    box-shadow: 2px 2px 5px black;
+    transform: scale(1.05);
+}
+.seller span{
+    padding: 5px 10px 5px 5px;
+    position: absolute;
+    background-color: #2ECC71;
+    left: 0;
+    top: 2px;
+    border-radius: 0 40px 40px 0;
+    color: black;
+}
+.min5{
+    width: 35%;
+    margin-left: 30%;
 }
 .seller-image{
     width: 100px;
