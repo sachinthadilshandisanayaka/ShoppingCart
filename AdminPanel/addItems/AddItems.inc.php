@@ -10,6 +10,17 @@
     <title>Document</title>
 </head>
 <body>
+    <section class="error-show" id="error-show">
+        <?php
+            if(isset($_REQUEST['er'])){
+                if($_REQUEST['er'] == 1){
+                    echo "<span onclick=\"document.getElementById('error-show').style.display='none';\">&times;</span>";
+                    echo "<p>UpDate Success</p>";
+                }
+            }
+        ?>
+    </section>
+   
     <div class="sellers">
         <h1>Add Items for each sellers</h1>
         <?php

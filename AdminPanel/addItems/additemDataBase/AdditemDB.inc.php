@@ -18,7 +18,7 @@
         $stm->execute();
 
         if($stm->rowCount() == 1){
-            header("Location: ../AddItems.inc.php");
+            header("Location: ../AddItems.inc.php?er=1");
         }
 
     } catch(PDOException $e){

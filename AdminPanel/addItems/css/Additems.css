@@ -164,3 +164,19 @@ body{
     color: #2E86C1;
     font-family: Trebuchet MS;
 }
+.error-show{
+  display: block;
+  /* padding: 20px; */
+  text-align: center;
+  background-color: #2ECC71;
+  font-size: larger;
+  font-family: Trebuchet MS;
+  margin-bottom: 0;
+}
+.error-show span{
+  cursor: pointer;
+  font-size: large;
+}
+.error-show p {
+  padding-bottom: 10px;
+}
