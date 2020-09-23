@@ -25,7 +25,9 @@ body{
     box-shadow: 2px 2px 5px black;
     transform: scale(1.05);
 }
+
 .seller span{
+    font-family: Segoe UI;
     padding: 5px 10px 5px 5px;
     position: absolute;
     background-color: #2ECC71;
@@ -33,6 +35,11 @@ body{
     top: 2px;
     border-radius: 0 40px 40px 0;
     color: black;
+    transition: .2s;
+}
+.seller:hover span{
+    transform:scale(1.16);
+    box-shadow: 1px 2px 5px black;
 }
 .min5{
     width: 35%;
