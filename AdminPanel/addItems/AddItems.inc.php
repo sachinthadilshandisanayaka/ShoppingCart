@@ -31,7 +31,7 @@
 
                 }
                 foreach($result as $row){
-                    echo "<div class='seller min5'>
+                    echo "<div class='seller min5' onclick='openForm()' value=".$row['SNAME']." id='seller'>
                     <span>click for add item</span>
                     <div class='seller-detail'>
                         <p>Name :".$row['SNAME']."</p><p>Address :".$row['SADDRESS']."</p><p>Email :".$row['SEMAIL']."</p><p>Phone number:".$row['SPHONE']."<br>
@@ -49,11 +49,11 @@
           
         ?>
         <div id="id01" class="modal">
-            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <form class="modal-content" action="/action_page.php">
+            <span onclick="closeForm()" class="close" title="Close Modal">&times;</span>
+            <form class="modal-content" action="/action_page.php" id="form-01">
                 <div class="container">
-                <h1>Sign Up</h1>
-                <p>Please fill in this form to create an account.</p>
+                <h1>Add Item</h1>
+                <p id="seller-name"></p>
                 <hr>
                     <label for="email"><b>Email</b></label>
                     <input type="text" placeholder="Enter Email" name="email" required>
@@ -63,16 +63,10 @@
 
                     <label for="psw-repeat"><b>Repeat Password</b></label>
                     <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-                    
-                    <label>
-                        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-                    </label>
-
-                <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
                 <div class="clearfix">
-                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                    <button type="submit" class="signupbtn">Sign Up</button>
+                    <button type="button" onclick="closeForm()" class="cancelbtn">Cancel</button>
+                    <button type="submit" class="signupbtn">Add Item</button>
                 </div>
                 </div>
             </form>
@@ -83,10 +77,20 @@
 var modal = document.getElementById('id01');
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+// window.onclick = function(event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//     document.getElementById('form-01').reset();
+//   }
+// }
+function openForm(){
+    document.getElementById('id01').style.display='block';
+    event = document.getElementById('seller').getAttributeNode("value").value;
+    document.getElementById('seller-name').innerHTML = "Seller name : " + event;
+}
+function closeForm(){
+    document.getElementById('id01').style.display='none';
+    document.getElementById('form-01').reset();
 }
 </script>
 
