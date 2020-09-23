@@ -33,7 +33,7 @@
                 foreach($result as $row){
                     $photoName = $row['SPHOTO'];
                     if($row['SPHOTO'] == null){
-                        $row['SPHOTO)'] = "defaultP.png";
+                        $photoName = "defaultP.png";
                     }
                     echo "<div class='seller min5' onclick='openForm()' value=".$row['SNAME']." id='seller'>
                     <span>click for add item</span>
@@ -59,14 +59,17 @@
                 <h1>Add Item</h1>
                 <p id="seller-name"></p>
                 <hr>
-                    <label for="email"><b>Email</b></label>
-                    <input type="text" placeholder="Enter Email" name="email" required>
+                    <label for="itemName"><b>Item Name</b></label>
+                    <input type="text" placeholder="Item name" name="itemName" required>
 
-                    <label for="psw"><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required>
+                    <label for="price"><b>Price</b></label>
+                    <input type="text" placeholder="Price" name="itemPrice" required>
 
-                    <label for="psw-repeat"><b>Repeat Password</b></label>
-                    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                    <label for="Description"><b>Description</b></label>
+                    <input type="password" placeholder="Description" name="itemDesc" required>
+
+                    <label for="Quantity"><b>Quantity</b></label>
+                    <input type="text" placeholder="Quantity" name="itemQuantity" required>
 
                 <div class="clearfix">
                     <button type="button" onclick="closeForm()" class="cancelbtn">Cancel</button>
