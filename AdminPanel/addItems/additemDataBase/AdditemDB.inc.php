@@ -1,11 +1,11 @@
 <?php
     require '../../../SignDataBaseConnection/db.inc.php';
 
-    $PDescription = ;
-    $PPrice = ;
-    $PQuantity = ;
-    $SID = ;
-    $PName = ;
+    $PDescription = trim($_REQUEST['itemDesc']);
+    $PPrice = trim($_REQUEST['itemPrice']);
+    $PQuantity = trim($_REQUEST['itemQuantity']);
+    $SID = trim($_REQUEST['sellerId']);
+    $PName = trim($_REQUEST['itemName']);
 
     try {
         $stm = $conn->prepare("INSERT INTO selleritems (IDescription,IPrice,IQuntity,SupID,IName) VALUES 
