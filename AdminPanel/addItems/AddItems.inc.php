@@ -16,6 +16,7 @@
         try{
             $stm = $conn->prepare("SELECT * FROM sellerdetails");
             $stm->execute();
+            $result = $stm->setFetchMode(PDO::FETCH_ASSOC);
             $result = $stm->fetchAll();
             if ( !$result){
                 echo "can not";
@@ -23,6 +24,7 @@
             if ($result == null) {
                 echo "<p>No Sellers</p>";
             } else{
+                echo $stm->rowCount();
                 foreach($result as $row){
                     echo "<div class='seller'>
                     <div class='seller-detail'>
