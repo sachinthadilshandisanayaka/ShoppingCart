@@ -40,10 +40,14 @@ body{
     transition:.2s ease-in-out;
     color: white;
 }
-.modify a{
+/* .modify a{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
   text-decoration: none;
   color: white;
-}
+} */
 .modify:hover{
     cursor: pointer;
     font-weight: bold;
