@@ -91,6 +91,12 @@
                     <label for="ProductPhoto"><b>Item Photo</b></label>
                     <input type="file" name="pfile" class="inputItems" id="inputItems0" required>
 
+                    <label for="ProductPhoto"><b>Item Photo</b></label>
+                    <input type="file" name="pfile2" class="inputItems1" id="inputItems1" required>
+
+                    <label for="ProductPhoto"><b>Item Photo</b></label>
+                    <input type="file" name="pfile3" class="inputItems2" id="inputItems2" required>
+
                 <div class="clearfix">
                     <button type="button" onclick="closeForm()" class="cancelbtn">Cancel</button>
                     <button type="submit" class="signupbtn">Add Item</button>
