@@ -6,6 +6,7 @@
     $PQuantity = trim($_REQUEST['itemQuantity']);
     $SID = trim($_REQUEST['sellerid']);
     $PName = trim($_REQUEST['itemName']);
+  
     
     $file = $_FILES['pfile'];
     $fileName = $_FILES['pfile']['name'];
@@ -94,7 +95,7 @@
                 // }
 
             } else{
-                header("Location: ../AddItems.inc.php?er2=1");
+                // header("Location: ../AddItems.inc.php?er2=1");
             }
 
 
