@@ -72,12 +72,12 @@
         </div>
         <div class="input-container">
             <i class="fa fa-user icon"></i>
-            <input class="input-field" type="text" placeholder="username" name="usrnm">
+            <input class="input-field" type="text" placeholder="username" name="usrnm" required>
         </div>
 
         <div class="input-container">
             <i class="fa fa-envelope icon"></i>
-            <input class="input-field" type="text" placeholder="email" name="email">
+            <input class="input-field" type="text" placeholder="email" name="email" required>
         </div>
 
         <?php
@@ -90,12 +90,12 @@
         
         <div class="input-container">
             <i class="fa fa-key icon"></i>
-            <input class="input-field" type="password" placeholder="Password" name="password">
+            <input class="input-field" type="password" placeholder="Password" name="password" required>
         </div>
 
         <div class="input-container">
             <i class="fa fa-key icon"></i>
-            <input class="input-field" type="password" placeholder="Conform Password" name="conformPassword">
+            <input class="input-field" type="password" placeholder="Conform Password" name="conformPassword" required>
         </div>
 
         <?php
