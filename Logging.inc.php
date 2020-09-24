@@ -10,16 +10,21 @@
 <form action="SignUp.inc.php" class="navigate-logging">
         <button type="submit">Sign up</button>
     </form>
-    <?php
-        if(isset($_REQUEST['er'])){
-            if($_REQUEST['er'] == 1){
-                echo "Loging Error<br><br>";
+
+    <div class="display-message" id="display-message">
+        <?php
+            if(isset($_REQUEST['er'])){
+                if($_REQUEST['er'] == 1){
+                    echo "<span onclick=\"document.getElementById('display-message').style.display='none';\">&times;</span>";
+                    echo "<h4>Loging Error</h4>";
+                }
+                if($_REQUEST['er'] == 2){
+                    echo "<span onclick=\"document.getElementById('display-message').style.display='none';\">&times;</span>";
+                    echo "<p>Create an account</p>";
+                }
             }
-            if($_REQUEST['er'] == 2){
-                echo "<b>Log in success</b><br><br>";
-            }
-        }
-    ?>
+        ?>
+    </div>
 
     <form action="SignDataBaseConnection/LogInDataBase.inc.php" method="POST" class="form-1">
         <h2>Logging</h2>

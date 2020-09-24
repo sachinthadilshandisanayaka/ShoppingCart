@@ -58,3 +58,28 @@ body{
 .button1:hover {
     box-shadow: 1px 1px 3px rgba(0, 0, 0, .9);
 }
+.display-message{
+    text-align: center;
+    background-color: #58D68D;
+    font-family: Trebuchet MS;
+    margin-top: 0;
+    box-shadow: 1px 2px 5px black;
+}
+.display-message p {
+    padding: 15px;
+}
+.display-message span{
+    margin-left: 40%;
+    cursor: pointer;
+    font-size: xx-large;
+    font-weight: bolder;
+    color: white;
+}
+.display-message span:hover{
+    color: red;
+}
+.display-message h4{
+    padding: 15px;
+    color: #AD1457;
+    /* text-shadow: 1px 2px 4px black; */
+}
