@@ -91,10 +91,10 @@
                     <label for="ProductPhoto"><b>Item Photo</b></label>
                     <input type="file" name="pfile" class="inputItems" id="inputItems0" required>
 
-                    <label for="ProductPhoto"><b>Item Photo</b></label>
+                    <label for="ProductPhoto2"><b>Item Photo</b></label>
                     <input type="file" name="pfile2" class="inputItems1" id="inputItems1" required>
 
-                    <label for="ProductPhoto"><b>Item Photo</b></label>
+                    <label for="ProductPhoto3"><b>Item Photo</b></label>
                     <input type="file" name="pfile3" class="inputItems2" id="inputItems2" required>
 
                 <div class="clearfix">
