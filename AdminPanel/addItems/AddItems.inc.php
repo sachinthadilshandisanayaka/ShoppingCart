@@ -90,12 +90,15 @@
 
                     <label for="ProductPhoto"><b>Item Photo</b></label>
                     <input type="file" name="pfile" class="inputItems" id="inputItems0" required>
+                    <input type="radio" name="selectImage" id="selectImage1" value="1">
 
                     <label for="ProductPhoto2"><b>Item Photo</b></label>
                     <input type="file" name="pfile2" class="inputItems1" id="inputItems1" required>
+                    <input type="radio" name="selectImage" id="selectImage2" value="2">
 
                     <label for="ProductPhoto3"><b>Item Photo</b></label>
                     <input type="file" name="pfile3" class="inputItems2" id="inputItems2" required>
+                    <input type="radio" name="selectImage" id="selectImage3" value="3">
 
                 <div class="clearfix">
                     <button type="button" onclick="closeForm()" class="cancelbtn">Cancel</button>
