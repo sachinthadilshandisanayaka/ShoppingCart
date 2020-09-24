@@ -48,7 +48,16 @@
             $fileExt3 = explode('.', $fileName3);
             $fileActualExt3 = strtolower(end($fileExt3));
             
-            
+            if($file != ""){
+                if($fileError == 0){
+
+                } else{
+                    header("Location: ../AddItems.inc.php?er2=1");
+                }
+
+            } else{
+                echo "1st file is null";
+            }
 
 
             // header("Location: ../AddItems.inc.php?er=1");

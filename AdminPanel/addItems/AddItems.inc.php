@@ -20,6 +20,16 @@
             }
         ?>
     </section>
+    <section class="error-show fileError" id="error-show2">
+        <?php
+            if(isset($_REQUEST['er2'])){
+                if($_REQUEST['er2'] == 1){
+                    echo "<span onclick=\"document.getElementById('error-show2').style.display='none';\">&times;</span>";
+                    echo "<p>Can't upload files</p>";
+                }
+            }
+        ?>
+    </section>
    
     <div class="sellers">
         <h1>Add Items for each sellers</h1>

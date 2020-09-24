@@ -188,7 +188,7 @@ body{
 .error-show span{
   margin-left: 60%;
   cursor: pointer;
-  font-size: large;
+  font-size: xx-large;
   font-weight: bolder;
 }
 .error-show span:hover{
@@ -196,4 +196,10 @@ body{
 }
 .error-show p {
   padding-bottom: 10px;
+}
+.fileError{
+  background-color: #f44336;
+}
+.fileError span:hover{
+  color: white;
 }
