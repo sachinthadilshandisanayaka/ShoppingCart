@@ -100,7 +100,7 @@
 
                     <label for="ProductPhoto"><b>Item Photo</b></label>
                     <div class="image">
-                        <input type="file" name="pfile" class="inputItems" id="inputItems0" required>
+                        <input type="file" name="pfile" class="inputItems" id="inputItems0" required enctype="multipart/form-data">
                         <input type="radio" name="selectImage" id="selectImage1" value="1" required>
                     </div>
 
