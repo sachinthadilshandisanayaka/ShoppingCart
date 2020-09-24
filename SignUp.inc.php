@@ -67,7 +67,7 @@
 
         <div class="input-container">
             <i class="fa fa-user icon"></i>
-            <input type="file" name="file" id="ProfilePicture" accept="image/*" style="padding: 10px;">
+            <input type="file" name="file" id="ProfilePicture" accept="image/*" style="padding: 10px;" required>
 
         </div>
         <div class="input-container">
