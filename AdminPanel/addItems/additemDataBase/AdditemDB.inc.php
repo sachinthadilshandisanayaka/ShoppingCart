@@ -1,5 +1,5 @@
 <?php
-    require '../../../SignDataBaseConnection/db.inc.php';
+    include '../../../SignDataBaseConnection/db.inc.php';
 
     $PDescription = trim($_REQUEST['itemDesc']);
     $PPrice = trim($_REQUEST['itemPrice']);
@@ -7,7 +7,7 @@
     $SID = trim($_REQUEST['sellerid']);
     $PName = trim($_REQUEST['itemName']);
   
-    
+    echo isset($_FILES["pfile"])." bppp";
     $file = $_FILES['pfile'];
     $fileName = $_FILES['pfile']['name'];
     $fileTmpName = $_FILES['pfile']['tmp_name'];
