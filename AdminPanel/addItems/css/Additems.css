@@ -86,6 +86,9 @@ body{
     background-color: #ddd;
     outline: none;
   }
+  input[type=radio]{
+    font-size: xx-large;
+  }
   .image input{display: inline;}
   .signupbtn{
     background-color: #4CAF50;

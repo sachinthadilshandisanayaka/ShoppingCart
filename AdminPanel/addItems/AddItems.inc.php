@@ -91,20 +91,20 @@
                     <label for="ProductPhoto"><b>Item Photo</b></label>
                     <div class="image">
                         <input type="file" name="pfile" class="inputItems" id="inputItems0" required>
-                        <input type="radio" name="selectImage" id="selectImage1" value="1">
+                        <input type="radio" name="selectImage" id="selectImage1" value="1" required>
                     </div>
 
                     <label for="ProductPhoto2"><b>Item Photo</b></label>
                     <div class="image">
                         <input type="file" name="pfile2" class="inputItems1" id="inputItems1" required>
-                        <input type="radio" name="selectImage" id="selectImage2" value="2">    
+                        <input type="radio" name="selectImage" id="selectImage2" value="2" required>    
                     </div>
                     
 
                     <label for="ProductPhoto3"><b>Item Photo</b></label>
                     <div class="image">
                         <input type="file" name="pfile3" class="inputItems2" id="inputItems2" required>
-                        <input type="radio" name="selectImage" id="selectImage3" value="3">    
+                        <input type="radio" name="selectImage" id="selectImage3" value="3" required>    
                     </div>
 
                 <div class="clearfix">
