@@ -134,7 +134,8 @@
                                                                 $stm6->execute();
 
                                                                 if($stm6->rowCount() == 1) {
-                                                                    header("Location: ../AdminPanel.inc.php");
+                                                                    header("Location: ../AdminPanel.inc.php?itm=1");
+                                                                    //item and seller added...
                                                                 } else{
                                                                     echo "<br>cant added to database<br>";
                                                                 }
@@ -164,7 +165,7 @@
                                     }
 
                                 } else{
-                                    header("Location: ../AdminPanel.inc.php");
+                                    header("Location: ../AdminPanel.inc.php?sl=1"); // seller added message
                                 }
                                 // ......................
                             } else {
