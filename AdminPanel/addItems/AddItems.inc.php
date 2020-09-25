@@ -80,7 +80,7 @@
         ?>
         <div id="id01" class="modal">
             <span onclick="closeForm()" class="close" title="Close Modal">&times;</span>
-            <form class="modal-content animate" action="additemDataBase/AdditemDB.inc.php" id="form-01" method="GET">
+            <form class="modal-content animate" action="additemDataBase/AdditemDB.inc.php" id="form-01"  method="POST" enctype="multipart/form-data">
                 <div class="container">
                 <h1>Add Item</h1>
                 <p id="seller-name"></p>
