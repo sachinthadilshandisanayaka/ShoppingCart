@@ -31,10 +31,14 @@
             }
         ?>
     </section>
-   
+    
+    <div class="navigatBack">
+        <button><a href="../AdminPanel.inc.php">Back</a></button>
+        
+    </div>
+
     <div class="sellers">
         <h1>Add Items for each sellers</h1>
-        <button class="navigatBack"><a href="../AdminPanel.inc.php">Back</a></button>
         <?php
 
         $counter = 0;
