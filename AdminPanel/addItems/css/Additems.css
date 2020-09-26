@@ -209,12 +209,18 @@ body{
 }
 .navigatBack button{
   background-color: #2ECC71;
-  padding: 10px 20px 10px 20px;
-  border-radius: 10px;
+  padding: 10px 30px;
+  border-radius: 20px;
   border: none;
-
+  transition: .2s;
+  position: relative;
+}
+.navigatBack button:hover{
+  box-shadow: 1px 1px 4px black;
 }
 .navigatBack button a{
+  /* position: absolute; */
   text-decoration: none;
   color: black;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }

@@ -31,10 +31,9 @@
             }
         ?>
     </section>
-    
+
     <div class="navigatBack">
-        <button><a href="../AdminPanel.inc.php">Back</a></button>
-        
+        <a href="../AdminPanel.inc.php"><button>Back</button></a>     
     </div>
 
     <div class="sellers">
