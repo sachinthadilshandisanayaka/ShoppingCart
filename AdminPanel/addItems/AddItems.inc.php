@@ -15,7 +15,7 @@
             if(isset($_REQUEST['er'])){
                 if($_REQUEST['er'] == 1){
                     echo "<span onclick=\"document.getElementById('error-show').style.display='none';\">&times;</span>";
-                    echo "<p>UpDate Success</p>";
+                    echo "<p>Update Success</p>";
                 }
             }
         ?>
