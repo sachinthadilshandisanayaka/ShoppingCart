@@ -8,12 +8,16 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 class="header-link">
     <?php
-        echo "Admin Panel works";
+      if(isset($_REQUEST['sl'])){
+        if($_REQUEST['sl'] == 1) {
+          echo "<div class=\"noError\">";
+          echo "<h2>Seller added success</h2>";
+          echo "<div>";
+        }
+      }
     ?>
-
-    </h1>
+    <h1 class="header-link">
     <section class="right-nav">
 
     </section>
