@@ -43,7 +43,7 @@
                 
                                 $uname = trim($_POST['usrnm']);
                                 $uemail = trim($_POST['email']);
-                                $role = 1;
+                                $role = trim($_POST['role']);
                                 $profile = $fileNewName;
                 
                                 $sql="SELECT * FROM userdb WHERE email=:un";
