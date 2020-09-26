@@ -240,3 +240,6 @@ input[type=text], input[type=password], input[type=tel], input[type=file] {
     transition: .2s;
     /* display: block; */
   }
+  .noError{
+    
+  }

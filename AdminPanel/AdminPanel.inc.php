@@ -8,15 +8,16 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-      if(isset($_REQUEST['sl'])){
-        if($_REQUEST['sl'] == 1) {
-          echo "<div class=\"noError\">";
-          echo "<h2>Seller added success</h2>";
-          echo "<div>";
-        }
-      }
-    ?>
+    <section class="error-show" id="error-show">
+        <?php
+            if(isset($_REQUEST['er'])){
+                if($_REQUEST['er'] == 1){
+                    echo "<span onclick=\"document.getElementById('error-show').style.display='none';\">&times;</span>";
+                    echo "<p>UpDate Success</p>";
+                }
+            }
+        ?>
+    </section>
     <h1 class="header-link">
     <section class="right-nav">
 
