@@ -34,6 +34,7 @@
    
     <div class="sellers">
         <h1>Add Items for each sellers</h1>
+        <button class="navigatBack"><a href="../addSellerDataBase.inc.php">Back</a></button>
         <?php
 
         $counter = 0;
