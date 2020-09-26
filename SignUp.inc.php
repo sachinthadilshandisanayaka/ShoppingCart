@@ -108,11 +108,11 @@
 
         <div class="input-container">
 
-        <input type="radio" name="role" id="" value="Adminiter" required="true">
+        <input type="radio" name="role" id="" value="1" required="true">
         <label for="Administer">Administer</label>
-        <input type="radio" name="role" id="" value="Customer" required="true">
+        <input type="radio" name="role" id="" value="2" required="true">
         <label for="Customer">Customer&nbsp;&nbsp;</label>
-        <input type="radio" name="role" id="" value="saller" required="true">
+        <input type="radio" name="role" id="" value="3" required="true">
         <label for="Saller" >Saller&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
         </div>
 
