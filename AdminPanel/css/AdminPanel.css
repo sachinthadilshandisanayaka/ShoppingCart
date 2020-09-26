@@ -240,6 +240,21 @@ input[type=text], input[type=password], input[type=tel], input[type=file] {
     transition: .2s;
     /* display: block; */
   }
-  .noError{
-    
+  .error-show{
+    display: block;
+    /* padding: 20px; */
+    text-align: center;
+    background-color: #2ECC71;
+    font-size: larger;
+    font-family: Trebuchet MS;
+    margin-bottom: 0;
+  }
+  .error-show span{
+    margin-left: 60%;
+    cursor: pointer;
+    font-size: xx-large;
+    font-weight: bolder;
+  }
+  .error-show span:hover{
+    color: red;
   }
