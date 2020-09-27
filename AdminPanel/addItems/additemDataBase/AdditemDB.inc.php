@@ -6,8 +6,11 @@
     $PQuantity = trim($_REQUEST['itemQuantity']);
     $SID = trim($_REQUEST['sellerid']);
     $PName = trim($_REQUEST['itemName']);
-  
     
+    // selected image
+    $positionImage = $_REQUEST['selectImage'];
+
+    // first image
     $file = $_FILES['pfile'];
     $fileName = $_FILES['pfile']['name'];
     $fileTmpName = $_FILES['pfile']['tmp_name'];
@@ -78,20 +81,28 @@
                         }
                         try {
                             // echo "test 5<br>";
-                            $stm3 = $conn->prepare("INSERT INTO itemphoto (PID,photo) VALUES (:pid,:pphoto1)");
+                            $dis1 = 1;
+                            $dis2 = 0;
+                            $dis3 = 0;
+
+                            if($positionImage == 1 ){
+                                $dis1 = 1;
+                            } elseif($positionImage == 2){
+                                $dis2 = 1;
+                            } elseif($positionImage == 3){
+                                $dis3 = 1;
+                            }
+                            $stm3 = $conn->prepare("INSERT INTO itemphoto (PID,photo,display) VALUES (:pid,:pphoto1,:dis1),(:pid,:pphoto2,:dis2),
+                                                    (:pid,:pphoto3,:dis3)");
+                            
                             $stm3->bindParam(':pid', $lastId);
                             $stm3->bindParam(':pphoto1', $fileNewName);
+                            $stm3->bindParam(':dis1', $dis1);
+                            $stm3->bindParam(':pphoto2', $fileNewName2);
+                            $stm3->bindParam(':dis2', $dis2);
+                            $stm3->bindParam(':pphoto3', $fileNewName3);
+                            $stm3->bindParam(':dis3', $dis3);
                             $stm3->execute();
-
-                            $stm4 = $conn->prepare("INSERT INTO itemphoto (PID,photo) VALUES (:pid,:pphoto2)");
-                            $stm4->bindParam(':pphoto2', $fileNewName2);
-                            $stm4->bindParam(':pid', $lastId);
-                            $stm4->execute();
-
-                            $stm5 = $conn->prepare("INSERT INTO itemphoto (PID,photo) VALUES (:pid,:pphoto3)");
-                            $stm5->bindParam(':pphoto3', $fileNewName3);
-                            $stm5->bindParam(':pid', $lastId);
-                            $stm5->execute();
 
                             if($stm3->rowCount()>0){
                                 header("Location: ../AddItems.inc.php?er=1");

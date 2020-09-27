@@ -114,7 +114,6 @@
                         <input type="file" name="pfile2" class="inputItems1" id="inputItems1" required>
                         <input type="radio" name="selectImage" id="selectImage2" value="2" required>    
                     </div>
-                    
 
                     <label for="ProductPhoto3"><b>Item Photo</b></label>
                     <div class="image">
