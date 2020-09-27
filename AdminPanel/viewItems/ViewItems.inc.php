@@ -34,7 +34,6 @@
                 } else{
                     echo "<div class=\"display-item\" style=\"grid-template-columns: 50% 50%;\">";
                 }
-                echo "";
            
             foreach($result as $row){
                 echo "<div class=\"item\">";
