@@ -23,6 +23,12 @@
             $stm->execute();
             $result = $stm->setFetchMode(PDO::FETCH_ASSOC);
             $result = $stm->fetchAll();
+            
+            $stm2 = $conn->prepare("SELECT IID,IDescription,IPrice,IQuntity,IName FROM selleritems WHERE exists 
+            (SELECT PID from itemphoto where itemphoto.PID = selleritems.IID and itemphoto.display=1)");
+            $stm2->execute();
+            $result2 = $stm2->setFetchMode(PDO::FETCH_ASSOC);
+            $result2 = $stm2->fetchAll();
 
             if(sizeof($result) != 0){   
                 if(sizeof($result)%4 == 0){
