@@ -32,22 +32,22 @@
 
             if(sizeof($result) != 0){   
                 if(sizeof($result)%4 == 0){
-                    echo "<div class=\"display-item\" style=\"grid-template-columns: 25% 25% 25% 25%;\">";
+                    echo "<div class=\"display-item\" style=\"grid-template-columns: 22% 22% 22% 22%;\">";
                 } elseif(sizeof($result)%3 == 0){
-                    echo "<div class=\"display-item\" style=\"grid-template-columns: 33.33% 33.33% 33.33%;\">";                        
+                    echo "<div class=\"display-item\" style=\"grid-template-columns: 33% 33% 33%;\">";                        
                 } else{
-                    echo "<div class=\"display-item\" style=\"grid-template-columns: 50% 50%;\">";
+                    echo "<div class=\"display-item\" style=\"grid-template-columns: 45% 45%;\">";
                 }
            
             // foreach($result as $row){
                 for($x = 0; $x < sizeof($result); $x++){
-                    echo "<div class=\"item\">";
+                    echo "<div class=\"items\">";
                     echo "<img src='../adminDataBase/itemUploads/".$result[$x]['photo']."'>";
-                    echo "<div class=\"item-name\">".$result2[$x]['IName']."</div>";
-                    echo "<div class=\"item-id\">".$result2[$x]['IDescription']."</div>";
-                    echo "<div class=\"item-description\">".$result2[$x]['IPrice']."</div>";
-                    echo "<div class=\"item-price\">".$result2[$x]['IQuntity']."</div>";
-                    echo "<div class=\"item-quantity\">".$result2[$x]['IID']."</div>";
+                    echo "<div class=\"item name\">".$result2[$x]['IName']."</div>";
+                    echo "<div class=\"item id\">".$result2[$x]['IDescription']."</div>";
+                    echo "<div class=\"item description\">".$result2[$x]['IPrice']."</div>";
+                    echo "<div class=\"item price\">".$result2[$x]['IQuntity']."</div>";
+                    echo "<div class=\"item quantity\">".$result2[$x]['IID']."</div>";
                     echo "</div>";
                 }
                

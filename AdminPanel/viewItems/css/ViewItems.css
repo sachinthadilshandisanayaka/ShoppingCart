@@ -5,7 +5,8 @@ body{
     margin: 0;
 }
 .header-link{
-    position: sticky;
+    position: fixed;
+    top: 0;
     z-index: 10;
     margin-top: 0;
     width: 100%;
@@ -20,7 +21,8 @@ body{
     background-color: #EBEDEF;
     float: right;
     width: 85%;
-    height: 500px;
+    margin-top: 60px;
+    /* height: 500px; */
    
 }
 .left-nav {
@@ -28,6 +30,7 @@ body{
     width: 15%;
     padding: 50px 0 50px 0;
     position: fixed;
+    top: 90px;
     height: 100%;
     font-family:Bahnschrift Light;
     /* font-size: large; */
@@ -50,17 +53,21 @@ body{
 .display-item{
     display: grid;
     position: relative;
-    grid-gap: 10px 20px;
+    justify-content: space-between;
+    grid-gap: 10px 0px;
     margin-top: 60px;
     /* border: 1px solid black; */
 }
-.display-item .item{
-    position: relative;
+.display-item .items{
+    /* position: relative; */
     border: 1px solid black;
     /* height: 300px; */
-    padding: 20px;
 }
-.item img{
+.item{
+    padding: 10px;
+    box-shadow: 1px 1px 3px black;
+}
+.items img{
     width: 100px;
     height: 100px;
     margin-left: 10px;
