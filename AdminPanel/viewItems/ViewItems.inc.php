@@ -29,8 +29,6 @@
                     echo "<div class=\"display-item\" style=\"grid-template-columns: 25% 25% 25% 25%;\">";
                 } elseif(sizeof($result)%3 == 0){
                     echo "<div class=\"display-item\" style=\"grid-template-columns: 33.33% 33.33% 33.33%;\">";                        
-                } elseif(sizeof($result)%2 == 0){
-                    echo "<div class=\"display-item\" style=\"grid-template-columns: 50% 50%;\">";
                 } else{
                     echo "<div class=\"display-item\" style=\"grid-template-columns: 50% 50%;\">";
                 }
