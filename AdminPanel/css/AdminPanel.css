@@ -27,7 +27,7 @@ body{
     background-color:#2E4053;
     width: 15%;
     padding: 50px 0 50px 0;
-   
+    position: fixed;
     height: 100%;
     font-family:Bahnschrift Light;
     /* font-size: large; */

@@ -31,7 +31,7 @@
     <section class="left-nav">
         <div class="modify" onclick="document.getElementById('id01').style.display='block'">Add seller</div>
         <div class="modify" onclick="location.href='addItems/AddItems.inc.php'">Add Item</div>
-        <div class="modify">View Items</div>
+        <div class="modify" onclick="location.href='viewItems/ViewItems.inc.php'">View Items</div>
         <div class="modify">Remove seller</div>
         <div class="modify">Orders</div>
         <div class="modify">Add orders</div>
@@ -41,8 +41,6 @@
         <div class="modify">Dashbord</div>
         <div class="modify">New Feature</div>
     </section>
-</head>
-<body>
 
 <div id="id01" class="modal">
   
