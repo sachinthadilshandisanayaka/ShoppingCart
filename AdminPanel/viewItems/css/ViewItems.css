@@ -53,6 +53,8 @@ body{
 .display-item{
     display: grid;
     position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
     justify-content: space-between;
     grid-gap: 10px 0px;
     margin-top: 60px;
