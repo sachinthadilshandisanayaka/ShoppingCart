@@ -81,7 +81,7 @@
                         }
                         try {
                             // echo "test 5<br>";
-                            $dis1 = 1;
+                            $dis1 = 0;
                             $dis2 = 0;
                             $dis3 = 0;
 
