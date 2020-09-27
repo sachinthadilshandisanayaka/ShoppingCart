@@ -54,7 +54,7 @@ body{
     margin-top: 60px;
     /* border: 1px solid black; */
 }
-.display-item div{
+.display-item .item{
     position: relative;
     border: 1px solid black;
     /* height: 300px; */
