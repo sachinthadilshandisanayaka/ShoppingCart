@@ -11,8 +11,8 @@ body{
     width: 100%;
     height: 90px;
     text-align: center;
-    background-color: #5D6D7E;
-    color: white;
+    background-color: greenyellow;
+    color: black;
     box-shadow: 3px 2px 5px black;
     margin-bottom: 0;
 }
@@ -40,14 +40,6 @@ body{
     transition:.2s ease-in-out;
     color: white;
 }
-/* .modify a{
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border: 1px solid black;
-  text-decoration: none;
-  color: white;
-} */
 .modify:hover{
     cursor: pointer;
     font-weight: bold;
