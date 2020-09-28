@@ -143,6 +143,9 @@ window.onclick = function(event) {
       document.getElementById("inputItems4").required = true;
       document.getElementById("inputItems5").required = true;
       document.getElementById("inputItems6").required = true;
+      document.getElementById("selectImage1").required = true;
+      document.getElementById("selectImage2").required = true;
+      document.getElementById("selectImage3").required = true;
       
     } else {
       document.getElementById("add-items").style.display = "none";
@@ -152,6 +155,9 @@ window.onclick = function(event) {
       document.getElementById("inputItems4").required = false;
       document.getElementById("inputItems5").required = false;
       document.getElementById("inputItems6").required = false;
+      document.getElementById("selectImage1").required = false;
+      document.getElementById("selectImage2").required = false;
+      document.getElementById("selectImage3").required = false;
       
     }
     
