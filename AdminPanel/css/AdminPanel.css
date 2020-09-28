@@ -55,7 +55,7 @@ body{
     box-shadow: 1px 1px 5px black;
     background-color: #EC407A;
 }
-input[type=text], input[type=password], input[type=tel], input[type=file] {
+input[type=text], input[type=password], input[type=tel] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -63,7 +63,20 @@ input[type=text], input[type=password], input[type=tel], input[type=file] {
     border: 1px solid #ccc;
     box-sizing: border-box;
   }
-  
+  input[type=file]{
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: flex;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  input[type=file],input[type=radio]{
+    display: flex;
+  }
+  input[type=radio]{
+    margin-bottom: 10px;
+  }
   /* Set a style for all buttons */
   button {
     background-color: #4CAF50;
