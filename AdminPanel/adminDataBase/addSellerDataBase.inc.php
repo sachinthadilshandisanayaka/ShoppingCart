@@ -8,6 +8,7 @@
     $SName = trim($_REQUEST['uname']);
     $SAddress = trim($_REQUEST['uaddress']);
     $SPhone = trim($_REQUEST['telephone']);
+    $imagePosion = $_REQUEST['selectImage'];
 
     // GET image details
 
@@ -129,11 +130,22 @@
                                                     $allow = array('jpg', 'jpeg', 'png');
 
                                                     if($fileName2 != "") {
-                                                        if( in_array($fileActualExt2, $allow)) {
+                                                        if( in_array($fileActualExt2, $allow) && in_array($fileActualExt3, $allow)
+                                                            && in_array($fileActualExt4 , $allow)) {
+
                                                             $fileNewName2 = uniqid('', true).".".$fileActualExt2;
                                                             $fileDestination2 = "itemUploads/".$fileNewName2;
                                                             move_uploaded_file($fileTmpName2, $fileDestination2);
-                                                            echo "<br> item photo Upload is Success <br>";
+                                                            
+                                                            $fileNewName3 = uniqid('', true).".".$fileActualExt3;
+                                                            $fileDestination3 = "itemUploads/".$fileNewName3;
+                                                            move_uploaded_file($fileTmpName3, $fileDestination3);
+
+                                                            $fileNewName4 = uniqid('', true).".".$fileActualExt4;
+                                                            $fileDestination4 = "itemUploads/".$fileNewName4;
+                                                            move_uploaded_file($fileTmpName4, $fileDestination4);
+
+                                                            // echo "<br> item photo Upload is Success <br>";
 
                                                             $sql3 = "SELECT IID FROM selleritems";
                                                             $stm5 = $conn->prepare($sql3);
@@ -145,10 +157,25 @@
                                                             echo $lastID;
                                                             //..............
                                                             try{
-                                                                $stm6 = $conn->prepare("INSERT INTO itemphoto (PID,photo) VALUES 
-                                                                        (:pid,:pphoto)");
+                                                                    $dis1 = 0;
+                                                                    $dis2 = 0;
+                                                                    $dis3 = 0;
+                                                                if($imagePosion == 1){
+                                                                    $dis1 = 1;
+                                                                } elseif($imagePosion == 2){
+                                                                    $dis2 = 1;
+                                                                }elseif($imagePosion == 3){
+                                                                    $dis3 = 1;
+                                                                }
+                                                                $stm6 = $conn->prepare("INSERT INTO itemphoto (PID,photo,display) VALUES (:pid,:pphoto1,:dis1),(:pid,:pphoto2,:dis2),
+                                                                (:pid,:pphoto3,:dis3)");
                                                                 $stm6->bindParam(':pid', $lastID);
-                                                                $stm6->bindParam(':pphoto', $fileNewName2);
+                                                                $stm6->bindParam(':pphoto1', $fileNewName2);
+                                                                $stm6->bindParam(':dis1', $dis1);
+                                                                $stm6->bindParam(':pphoto2', $fileNewName3);
+                                                                $stm6->bindParam(':dis2',$dis2);
+                                                                $stm6->bindParam(':pphoto3', $fileNewName4);
+                                                                $stm6->bindParam(':dis3',$dis3);
                                                                 $stm6->execute();
 
                                                                 if($stm6->rowCount() == 1) {
