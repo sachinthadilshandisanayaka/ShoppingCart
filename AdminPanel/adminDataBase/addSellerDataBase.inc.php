@@ -178,7 +178,7 @@
                                                                 $stm6->bindParam(':dis3',$dis3);
                                                                 $stm6->execute();
 
-                                                                if($stm6->rowCount() == 1) {
+                                                                if($stm6->rowCount() > 0) {
                                                                     header("Location: ../AdminPanel.inc.php?itm=1");
                                                                     //item and seller added...
                                                                 } else{
