@@ -108,6 +108,24 @@
                                                     $fileType2 = $_FILES['pfile']['type'];
                                                     $fileExt2 = explode('.', $fileName2);
                                                     $fileActualExt2 = strtolower(end($fileExt2));
+
+                                                    $file3 = $_FILES['pfile2'];
+                                                    $fileName3 = $_FILES['pfile2']['name'];
+                                                    $fileTmpName3 = $_FILES['pfile2']['tmp_name'];
+                                                    $fileSize3 = $_FILES['pfile2']['size'];
+                                                    $fileError3 = $_FILES['pfile2']['error'];
+                                                    $fileType3 = $_FILES['pfile2']['type'];
+                                                    $fileExt3 = explode('.', $fileName2);
+                                                    $fileActualExt3 = strtolower(end($fileExt2));
+
+                                                    $file4 = $_FILES['pfile3'];
+                                                    $fileName4 = $_FILES['pfile3']['name'];
+                                                    $fileTmpName4 = $_FILES['pfile3']['tmp_name'];
+                                                    $fileSize4 = $_FILES['pfile3']['size'];
+                                                    $fileError4 = $_FILES['pfile3']['error'];
+                                                    $fileType4 = $_FILES['pfile3']['type'];
+                                                    $fileExt4 = explode('.', $fileName2);
+                                                    $fileActualExt4 = strtolower(end($fileExt2));
                                                     $allow = array('jpg', 'jpeg', 'png');
 
                                                     if($fileName2 != "") {
