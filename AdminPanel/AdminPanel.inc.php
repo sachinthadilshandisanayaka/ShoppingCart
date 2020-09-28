@@ -80,6 +80,12 @@
         <label for="ProductPhoto"><b>Item Photo</b></label>
         <input type="file" name="pfile" class="inputItems" id="inputItems0">
 
+        <label for="ProductPhoto"><b>Item Photo</b></label>
+        <input type="file" name="pfile2" class="inputItems" id="inputItems5">
+
+        <label for="ProductPhoto"><b>Item Photo</b></label>
+        <input type="file" name="pfile3" class="inputItems" id="inputItems6">
+
         <label for="ProductName"><b>Product Name</b></label>
         <input type="text" placeholder="Product name" name="pdname" class="inputItems" id="inputItems1">
 
@@ -132,6 +138,8 @@ window.onclick = function(event) {
       document.getElementById("inputItems2").required = true;
       document.getElementById("inputItems3").required = true;
       document.getElementById("inputItems4").required = true;
+      document.getElementById("inputItems5").required = true;
+      document.getElementById("inputItems6").required = true;
       
     } else {
       document.getElementById("add-items").style.display = "none";
@@ -139,6 +147,8 @@ window.onclick = function(event) {
       document.getElementById("inputItems2").required = false;
       document.getElementById("inputItems3").required = false;
       document.getElementById("inputItems4").required = false;
+      document.getElementById("inputItems5").required = false;
+      document.getElementById("inputItems6").required = false;
       
     }
     
