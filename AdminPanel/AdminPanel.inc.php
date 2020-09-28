@@ -79,12 +79,15 @@
       
         <label for="ProductPhoto"><b>Item Photo</b></label>
         <input type="file" name="pfile" class="inputItems" id="inputItems0">
+        <input type="radio" name="selectImage" id="selectImage1" value="1">
 
         <label for="ProductPhoto"><b>Item Photo</b></label>
         <input type="file" name="pfile2" class="inputItems" id="inputItems5">
+        <input type="radio" name="selectImage" id="selectImage2" value="2">
 
         <label for="ProductPhoto"><b>Item Photo</b></label>
         <input type="file" name="pfile3" class="inputItems" id="inputItems6">
+        <input type="radio" name="selectImage" id="selectImage3" value="3">
 
         <label for="ProductName"><b>Product Name</b></label>
         <input type="text" placeholder="Product name" name="pdname" class="inputItems" id="inputItems1">
