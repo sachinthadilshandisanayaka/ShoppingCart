@@ -10,7 +10,7 @@
 </head>
 <body>
     <?php
-        $stm = $conn->prepare("");
+        $stm = $conn->prepare("SELECT * FROM sellerdetails");
 
     ?>
     
