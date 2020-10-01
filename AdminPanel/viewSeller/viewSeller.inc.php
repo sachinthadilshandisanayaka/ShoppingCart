@@ -9,7 +9,10 @@
     <title>view seller</title>
 </head>
 <body>
-    
+    <?php
+        $stm = $conn->prepare("");
+
+    ?>
     
 </body>
 </html>
