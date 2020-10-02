@@ -2,8 +2,13 @@
     <input type="file" name="file">
     <button type="submit" name="submit">ok</button>
 </form>
+<script>
 
-<?php
+    var hasNumber = /\d/;
+    alert(!hasNumber.test("hello"));
+
+</script>
+<!-- <?php
     require '../SignDataBaseConnection/db.inc.php';
 
     if(isset($_POST['submit'])){
@@ -11,9 +16,9 @@
 
         // echo $imageData;
         // header("content-type : image/png");
-        echo '<img src="data:image/png;base64,'.base64_encode($imageData).'">'; 
+        echo '<img src="data:image/png;base64,'.base64_encode($imageData).'">';
               
     }
    
 
-?>
+?> -->
