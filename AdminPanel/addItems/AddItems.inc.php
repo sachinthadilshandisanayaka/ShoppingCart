@@ -35,7 +35,7 @@
     <div class="navigatBack">
         <a href="../AdminPanel.inc.php"><button>Back</button></a>     
     </div>
-
+<!-- href=\"../../blobImage/blob.inc.php?id=".$row['SID']."\" -->
     <div class="sellers">
         <h1>Add Items for each sellers</h1>
         <?php
@@ -66,6 +66,7 @@
                         $photoName = "defaultP.png";
                     }
                     echo "<div class='seller min5' onclick='openForm(this.id, ".$row['SID'].")' id='".$passValue."'>
+                    <a class=\"navigate\">
                     <span>click for add item</span>
                     <div class='seller-detail'>
                         <p>Name :".$row['SNAME']."</p><p>Address :".$row['SADDRESS']."</p><p>Email :".$row['SEMAIL']."</p><p>Phone number:".$row['SPHONE']."</p>
@@ -73,7 +74,7 @@
                     <div class='seller-image'>
                          <img src='../adminDataBase/uploads/".$photoName."' alt='' >
                     </div>
-                           </div>";
+                           </a></div>";
                     // echo $row['SName']." ".$row['SAddress']."<br>";
                     $counter++;
                 }

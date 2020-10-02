@@ -4,11 +4,11 @@
 </form>
 <script>
 
-    var hasNumber = /\d/;
-    alert(!hasNumber.test("hello"));
+    // var hasNumber = /\d/;
+    // alert(!hasNumber.test("hello"));
 
 </script>
-<!-- <?php
+<?php
     require '../SignDataBaseConnection/db.inc.php';
 
     if(isset($_POST['submit'])){
@@ -16,14 +16,12 @@
 
         // echo $imageData;
         // header("content-type : image/png");
-        echo '<img src="data:image/png;base64,'.base64_encode($imageData).'">';
+        echo "<img src=\"data:image/jpeg;base64,".base64_encode($imageData)."\">";
+        echo "<img src=\"data:image/jpeg;base64,".$imageData."\">";
+        // echo "<img src='data;image/png_code64, ".base64_encode($imageData)."'>";
               
     }
    
 
-?> -->
-
-<?php
-$image = "ddd";
-    echo "<img src='data;image/png_code64, ".base64_encode($image)."'>";
 ?>
+<!--  -->
