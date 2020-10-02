@@ -7,11 +7,11 @@
     require '../SignDataBaseConnection/db.inc.php';
 
     if(isset($_POST['submit'])){
-        $imageData = $_FILES['file']['tmp_name'];
+        $imageData = file_get_contents($_FILES['file']['tmp_name']);
 
         // echo $imageData;
         // header("content-type : image/png");
-        echo '<img src="data:image/png;base64,'.base64_encode(file_get_contents($imageData)).'">'; 
+        echo '<img src="data:image/png;base64,'.base64_encode($imageData).'">'; 
               
     }
    
