@@ -22,3 +22,8 @@
    
 
 ?> -->
+
+<?php
+$image = "ddd";
+    echo "<img src='data;image/png_code64, ".base64_encode($image)."'>";
+?>
