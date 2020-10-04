@@ -44,7 +44,7 @@
                         move_uploaded_file($fileTmpName, $fileDestination);
                         echo 'Upload is Success';
     
-                        try {
+                        try { 
                             $stm2 = $conn->prepare("INSERT INTO sellerDetails (sname,saddress,semail,sphone,sphoto) VALUES(:sname,:saddress,
                                         :semail, :sphone, :sphoto)");
                             
@@ -74,7 +74,7 @@
 
                                 if ($PName != "") {
                                     
-                                    $sql2 = "SELECT SID FROM sellerDetails WHERE semail=:emailGetID";
+                                    $sql2 = "SELECT id FROM sellerDetails WHERE semail=:emailGetID";
                                     $stm3 = $conn->prepare($sql2);
                                     $stm3->bindParam(':emailGetID', $SEmail);
                                     $stm3->execute();

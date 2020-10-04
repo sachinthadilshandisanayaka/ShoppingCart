@@ -63,6 +63,7 @@ body{
 .display-item .items{
     /* position: relative; */
     border: 1px solid black;
+    position: relative;
     /* height: 300px; */
 }
 .item{
@@ -73,4 +74,22 @@ body{
     width: 100px;
     height: 100px;
     margin-left: 10px;
+}
+.delete{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #EC407A;
+    border: 1px solid #EC407A;
+    box-shadow: 1px 1px 4px rgba(0,0,0,.2);
+    transition: .1s;
+}
+.delete:hover{
+    background-color:  #EC407A;
+    color: white;
+    box-shadow: 1px 1px 4px rgba(0,0,0,.8);
 }

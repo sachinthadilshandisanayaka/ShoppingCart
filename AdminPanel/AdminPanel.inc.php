@@ -16,6 +16,12 @@
                     echo "<p>Seller added success</p><br>";
                 }
             }
+            if(isset($_REQUEST['itm'])){
+              if($_REQUEST['itm'] == 1){
+                  echo "<span onclick=\"document.getElementById('error-show').style.display='none';\">&times;</span>";
+                  echo "<p>Seller and item added success</p><br>";
+              }
+          }
         ?>
 </section>      
     <h1 class="header-link">

@@ -10,7 +10,7 @@
     <title>Document</title>
 </head>
 <body>
-</section>      
+</section>     
     <h1 class="header-link">
     <?php
         echo "Items";
@@ -42,6 +42,7 @@
             // foreach($result as $row){
                 for($x = 0; $x < sizeof($result); $x++){
                     echo "<div class=\"items\">";
+                    echo "<a class=\"delete\" href=\"deleteItems/DeleteItem.inc.php?id=".$result2[$x]['id']."\">Delete item</a>";
                     echo "<img src='../adminDataBase/itemUploads/".$result[$x]['photo']."'>";
                     echo "<div class=\"item name\">".$result2[$x]['iname']."</div>";
                     echo "<div class=\"item id\">".$result2[$x]['idescription']."</div>";
