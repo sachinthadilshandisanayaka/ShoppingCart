@@ -45,7 +45,7 @@
                         echo 'Upload is Success';
     
                         try {
-                            $stm2 = $conn->prepare("INSERT INTO sellerDetails (SName,SAddress,SEmail,SPhone,SPhoto) VALUES(:sname,:saddress,
+                            $stm2 = $conn->prepare("INSERT INTO sellerDetails (sname,saddress,semail,sphone,sphoto) VALUES(:sname,:saddress,
                                         :semail, :sphone, :sphoto)");
                             
                             $stm2->bindParam(':sname', $SName);
@@ -74,7 +74,7 @@
 
                                 if ($PName != "") {
                                     
-                                    $sql2 = "SELECT SID FROM sellerDetails WHERE SEmail=:emailGetID";
+                                    $sql2 = "SELECT SID FROM sellerDetails WHERE semail=:emailGetID";
                                     $stm3 = $conn->prepare($sql2);
                                     $stm3->bindParam(':emailGetID', $SEmail);
                                     $stm3->execute();
@@ -84,10 +84,10 @@
                                         // $result = $stm3->setFetchMode(PDO::FETCH_ASSOC);
                                         $result = $stm3->fetchAll();
                                         foreach($result as $row) {
-                                            $SID = $row['SID'];
+                                            $SID = $row['id'];
                                             
                                             try{
-                                                $stm4 = $conn->prepare("INSERT INTO SELLERITEMS (IDescription,IPrice,IQuntity,SupID,IName) VALUES 
+                                                $stm4 = $conn->prepare("INSERT INTO SELLERITEMS (idescription,iprice,iquntity,supid,iname) VALUES 
                                                         (:ides,:iprice,:iqun,:isid,:iname)");
                                                 $stm4->bindParam(':ides', $PDescription);
                                                 $stm4->bindParam(':iprice', $PPrice);
@@ -147,12 +147,12 @@
 
                                                             // echo "<br> item photo Upload is Success <br>";
 
-                                                            $sql3 = "SELECT IID FROM selleritems";
+                                                            $sql3 = "SELECT id FROM selleritems";
                                                             $stm5 = $conn->prepare($sql3);
                                                             $stm5->execute();
                                                             $result2 = $stm5->fetchAll();
                                                             foreach($result2 as $row2) {
-                                                                $lastID = $row2['IID'];
+                                                                $lastID = $row2['id'];
                                                             }
                                                             echo $lastID;
                                                             //..............

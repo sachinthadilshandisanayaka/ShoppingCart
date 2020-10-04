@@ -9,7 +9,7 @@
 
 </script>
 <?php
-    require '../SignDataBaseConnection/db.inc.php';
+    // require '../SignDataBaseConnection/db.inc.php';
 
     if(isset($_POST['submit'])){
         $imageData = file_get_contents($_FILES['file']['tmp_name']);
