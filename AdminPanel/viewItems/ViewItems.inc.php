@@ -50,6 +50,16 @@
                     echo "<div class=\"item price\">".$result2[$x]['iquntity']."</div>";
                     echo "<div class=\"item quantity\">".$result2[$x]['id']."</div>";
                     echo "</div>";
+                    
+
+                    echo "";
+                    echo "";
+                    echo "";
+                    echo "";
+                    echo "";
+                    echo "";
+                    echo "";
+                    echo "";
                 }
                
             // }
@@ -70,7 +80,24 @@
         <div class="modify">Dashbord</div>
         <div class="modify">New Feature</div>
 </section>
-
+        <div class="delete-item" id="delete-item">
+            <div class="get-permision">
+                <p>Are you sure <b>delete</b> this item</p>
+                <div class="yes-no">
+                    <h4><a onclick="closeFunction()">NO</a></h4>
+                    <h4><a href="">YES</a></h4>
+                </div>
+                
+            </div>
+        </div>
 
 </body>
+<script>
+    function closeFunction(){
+        document.getElementById('delete-item').style.display = "none";
+    }
+    function openFunction(){
+        document.getElementById('delete-item').style.display = "block";
+    }
+</script>
 </html>

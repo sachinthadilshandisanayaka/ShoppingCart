@@ -93,3 +93,49 @@ body{
     color: white;
     box-shadow: 1px 1px 4px rgba(0,0,0,.8);
 }
+.delete-item{
+    position: fixed;
+    display: none;
+    background-color: rgba(0,0,0,.6);
+    width: 100%;
+    height: 100%;
+}
+.get-permision{
+    position: fixed;
+    bottom: 40%;
+    left: 36%;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    width: 25%;
+    height: 20%;
+    font-family: Trebuchet MS;
+}
+.yes-no{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 0px;
+    margin-top: 80px;
+}
+.get-permision h4{
+    position: relative;
+    padding: 5px;
+    text-align: center;
+    
+}
+.get-permision a:hover{
+    cursor: pointer;
+}
+.get-permision a{
+    display: block;
+    background-color: #EC407A;
+    /* position: relative; */
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    padding: 0px 1px;
+    color: white;
+    box-shadow: 1px 1px 4px rgba(0,0,0,.6);
+/* width: 50%; */
+   
+}
