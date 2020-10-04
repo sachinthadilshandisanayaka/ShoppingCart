@@ -10,12 +10,23 @@
     <title>Document</title>
 </head>
 <body>
-</section>     
+   
     <h1 class="header-link">
     <?php
         echo "Items";
     ?>
 
+<section class="error-show" id="error-show">
+        <?php
+            if(isset($_REQUEST['sc'])){
+                if($_REQUEST['sc'] == 1){
+                    echo "<span onclick=\"document.getElementById('error-show').style.display='none';\">&times;</span>";
+                    echo "<p>Item was deleted successfully</p>";
+                    echo "<br>";
+                }
+            }
+        ?> 
+</section> 
     </h1>
     <section class="right-nav">
         <?php
@@ -42,7 +53,7 @@
             // foreach($result as $row){
                 for($x = 0; $x < sizeof($result); $x++){
                     echo "<div class=\"items\">";
-                    echo "<a class=\"delete\" href=\"deleteItems/DeleteItem.inc.php?id=".$result2[$x]['id']."\">Delete item</a>";
+                    echo "<a class=\"delete\" onclick=\"openFunction('".$result[$x]['PID']."')\">Delete item</a>";
                     echo "<img src='../adminDataBase/itemUploads/".$result[$x]['photo']."'>";
                     echo "<div class=\"item name\">".$result2[$x]['iname']."</div>";
                     echo "<div class=\"item id\">".$result2[$x]['idescription']."</div>";
@@ -50,16 +61,6 @@
                     echo "<div class=\"item price\">".$result2[$x]['iquntity']."</div>";
                     echo "<div class=\"item quantity\">".$result2[$x]['id']."</div>";
                     echo "</div>";
-                    
-
-                    echo "";
-                    echo "";
-                    echo "";
-                    echo "";
-                    echo "";
-                    echo "";
-                    echo "";
-                    echo "";
                 }
                
             // }
@@ -85,7 +86,7 @@
                 <p>Are you sure <b>delete</b> this item</p>
                 <div class="yes-no">
                     <h4><a onclick="closeFunction()">NO</a></h4>
-                    <h4><a href="">YES</a></h4>
+                    <h4><a href="" id="yes-no">YES</a></h4>
                 </div>
                 
             </div>
@@ -95,9 +96,11 @@
 <script>
     function closeFunction(){
         document.getElementById('delete-item').style.display = "none";
+        document.getElementById("yes-no").getAttributeNode("href").value = "";
     }
-    function openFunction(){
+    function openFunction(event){
         document.getElementById('delete-item').style.display = "block";
+        document.getElementById("yes-no").getAttributeNode("href").value = "deleteItems/DeleteItem.inc.php?id="+event;
     }
 </script>
 </html>
