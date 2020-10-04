@@ -24,8 +24,8 @@
             $result = $stm->setFetchMode(PDO::FETCH_ASSOC);
             $result = $stm->fetchAll();
             
-            $stm2 = $conn->prepare("SELECT IID,IDescription,IPrice,IQuntity,IName FROM selleritems WHERE exists 
-            (SELECT PID from itemphoto where itemphoto.PID = selleritems.IID and itemphoto.display=1)");
+            $stm2 = $conn->prepare("SELECT id,idescription,iprice,iquntity,iname FROM selleritems WHERE exists 
+            (SELECT PID from itemphoto where itemphoto.PID = selleritems.id and itemphoto.display=1)");
             $stm2->execute();
             $result2 = $stm2->setFetchMode(PDO::FETCH_ASSOC);
             $result2 = $stm2->fetchAll();
@@ -43,11 +43,11 @@
                 for($x = 0; $x < sizeof($result); $x++){
                     echo "<div class=\"items\">";
                     echo "<img src='../adminDataBase/itemUploads/".$result[$x]['photo']."'>";
-                    echo "<div class=\"item name\">".$result2[$x]['IName']."</div>";
-                    echo "<div class=\"item id\">".$result2[$x]['IDescription']."</div>";
-                    echo "<div class=\"item description\">".$result2[$x]['IPrice']."</div>";
-                    echo "<div class=\"item price\">".$result2[$x]['IQuntity']."</div>";
-                    echo "<div class=\"item quantity\">".$result2[$x]['IID']."</div>";
+                    echo "<div class=\"item name\">".$result2[$x]['iname']."</div>";
+                    echo "<div class=\"item id\">".$result2[$x]['idescription']."</div>";
+                    echo "<div class=\"item description\">".$result2[$x]['iprice']."</div>";
+                    echo "<div class=\"item price\">".$result2[$x]['iquntity']."</div>";
+                    echo "<div class=\"item quantity\">".$result2[$x]['id']."</div>";
                     echo "</div>";
                 }
                

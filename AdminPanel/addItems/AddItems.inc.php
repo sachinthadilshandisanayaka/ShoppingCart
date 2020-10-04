@@ -60,16 +60,16 @@
 
                 }
                 foreach($result as $row){
-                    $photoName = $row['SPHOTO'];
-                    $passValue = $row['SNAME'];
-                    if($row['SPHOTO'] == null){
+                    $photoName = $row['sphoto'];
+                    $passValue = $row['sname'];
+                    if($row['sphoto'] == null){
                         $photoName = "defaultP.png";
                     }
-                    echo "<div class='seller min5' onclick='openForm(this.id, ".$row['SID'].")' id='".$passValue."'>
+                    echo "<div class='seller min5' onclick='openForm(this.id, ".$row['id'].")' id='".$passValue."'>
                     <a class=\"navigate\">
                     <span>click for add item</span>
                     <div class='seller-detail'>
-                        <p>Name :".$row['SNAME']."</p><p>Address :".$row['SADDRESS']."</p><p>Email :".$row['SEMAIL']."</p><p>Phone number:".$row['SPHONE']."</p>
+                        <p>Name :".$row['sname']."</p><p>Address :".$row['saddress']."</p><p>Email :".$row['semail']."</p><p>Phone number:".$row['sphone']."</p>
                     </div>
                     <div class='seller-image'>
                          <img src='../adminDataBase/uploads/".$photoName."' alt='' >

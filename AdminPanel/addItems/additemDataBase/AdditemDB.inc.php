@@ -42,7 +42,7 @@
     $fileActualExt3 = strtolower(end($fileExt3));
 
     try {
-        $stm = $conn->prepare("INSERT INTO selleritems (IDescription,IPrice,IQuntity,SupID,IName) VALUES 
+        $stm = $conn->prepare("INSERT INTO selleritems (idescription,iprice,iquntity,supID,iname) VALUES 
         (:ides,:iprice,:iqun,:isid,:iname)");
         $stm->bindParam(':ides', $PDescription);
         $stm->bindParam(':iprice', $PPrice);
@@ -72,12 +72,12 @@
                         $fileDestination3 = "../../adminDataBase/itemUploads/".$fileNewName3;
                         move_uploaded_file($fileTmpName3, $fileDestination3);
 
-                        $stm2 = $conn->prepare("SELECT IID FROM selleritems");
+                        $stm2 = $conn->prepare("SELECT id FROM selleritems");
                         $stm2->execute();
                         $result = $stm2->fetchAll();
 
                         foreach($result as $row) {
-                            $lastId = $row['IID'];
+                            $lastId = $row['id'];
                         }
                         try {
                             // echo "test 5<br>";
