@@ -9,6 +9,6 @@
     <title>Remove Seller</title>
 </head>
 <body>
-    
+    <h1>Remove Seller</h1>
 </body>
 </html>
