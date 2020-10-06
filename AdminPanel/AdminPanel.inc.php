@@ -38,7 +38,7 @@
         <div class="modify" onclick="document.getElementById('id01').style.display='block'">Add seller</div>
         <div class="modify" onclick="location.href='addItems/AddItems.inc.php'">Add Item</div>
         <div class="modify" onclick="location.href='viewItems/ViewItems.inc.php'">View Items</div>
-        <div class="modify">Remove seller</div>
+        <div class="modify" onclick="location.href='removeSeller/RemoveSeller.inc.php'">Remove seller</div>
         <div class="modify">Orders</div>
         <div class="modify">Add orders</div>
         <div class="modify">Cart</div>
