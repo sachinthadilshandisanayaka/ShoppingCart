@@ -72,7 +72,7 @@
     <section class="left-nav">
         <div class="modify" onclick="location.href='../adminPanel.inc.php'">Main menu</div>
         <div class="modify" onclick="location.href='../addItems/AddItems.inc.php'">Add Item</div>
-        <div class="modify">Remove seller</div>
+        <div class="modify" onclick="location.href='../removeSeller/RemoveSeller.inc.php'">Remove seller</div>
         <div class="modify">Orders</div>
         <div class="modify">Add orders</div>
         <div class="modify">Cart</div>

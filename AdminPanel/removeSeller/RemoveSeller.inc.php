@@ -12,6 +12,20 @@
 <body>
     <h1>Remove Seller</h1>
     <a href="../AdminPanel.inc.php" class="back"><button>Back</button></a>
+
+    <section class="Body">
+        <div class="allSellers">
+            <?php
+                try{
+                    $stm = $conn->prepare("SELECT * FROM ");
+
+                } catch(PDOException $e) {
+                    echo "Error :".$e;
+                }
+
+            ?>
+        </div>
+    </section>
     
 </body>
 </html>
