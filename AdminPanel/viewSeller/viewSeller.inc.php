@@ -7,10 +7,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/viewSeller.css">
+    <link rel="stylesheet" href="css/viewSeller.css">
     <script src=""></script>
     <title>View seller</title>
 </head>
 <body>
+<a href="../AdminPanel.inc.php" class="back"><button>Back</button></a>
+
     <?php
         $stm = $conn->prepare("SELECT * FROM sellerdetails");
         $stm->execute();
@@ -30,17 +33,16 @@
                 }
 
                 echo "<div class=\"seller\">";
-                echo "<div> 
+                echo "<p class=\"seller-image\"> 
                     <img src=\"../adminDataBase/uploads/".$photoName."\">
-                </div>";
+                </p>";
                 echo "<p>Name : ".$row['sname']."</p>";
-                echo "<p>Name : ".$row['saddress']."</p>";
-                echo "<p>Name : ".$row['semail']."</p>"; 
-                echo "<p>Name : ".$row['sphone']."</p>";
-            } 
-            echo "</div>";
+                echo "<p>address : ".$row['saddress']."</p>";
+                echo "<p>email : ".$row['semail']."</p>"; 
+                echo "<p>phone number : ".$row['sphone']."</p>";
+                echo "</div>";
+            }   
         }
-
         echo "</section>";
     ?>
     
