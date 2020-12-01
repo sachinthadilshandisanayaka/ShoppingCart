@@ -28,18 +28,29 @@
                         if(sizeof($result) == 0) {
                             echo "<div class=\"no_seller\"> No Sellers </div>";
                         } else {
-                            echo "<div class=\"seller\">";
+                            foreach ($result as $row) {
+                                $photoName = $row['sphoto'];
+                                $passValue = $row['sname'];
+                                if ($row['sphoto'] == null) {
+                                    $photoName = "defaultP.png";
+                                }
+                            
+                                echo "<div class=\"seller\">";
                                 echo "<div class=\"seller_image\">
                                         <img src=\"../adminDataBase/uploads/".$photoName."\">
                                         </div>";
+                                echo "<div>";
                                 echo "<p>Name : ".$row['sname']."</p>";
                                 echo "<p>address : ".$row['saddress']."</p>";
-                                echo "<p>email : ".$row['semail']."</p>"; 
+                                echo "<p>email : ".$row['semail']."</p>";
                                 echo "<p>phone number : ".$row['sphone']."</p>";
-                            echo "</div>"; // seller class
-                        }
+                                echo "</div>";
+                                echo "<a class=\"delete\" onclick=\"openFunction('".$result[$x]['PID']."')\">Delete item</a>";
+                                echo "</div>"; // seller class
+                            }
 
-                    echo "</section>";
+                            echo "</section>";
+                        }
 
                 } catch(PDOException $e) {
                     echo "Error :".$e;
