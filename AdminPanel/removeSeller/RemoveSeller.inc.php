@@ -62,4 +62,16 @@
 
 </body>
 
+<script>
+function closeFunction() {
+    document.getElementById('delete-item').style.display = "none";
+    document.getElementById("yes-no").getAttributeNode("href").value = "";
+}
+
+function openFunction(event) {
+    document.getElementById('delete-item').style.display = "block";
+    document.getElementById("yes-no").getAttributeNode("href").value = "deleteItems/DeleteItem.inc.php?id=" + event;
+}
+</script>
+
 </html>
